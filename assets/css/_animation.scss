@@ -1,0 +1,12 @@
+.fadeup {
+  animation: fadeup 0.05s linear 1;
+}
+@keyframes fadeup {
+  0% {
+    top: 290%;
+  }
+  100% {
+    top: 200%;
+  }
+}
+
