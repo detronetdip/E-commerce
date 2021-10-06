@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: $background;
+}
+input,
+select {
+  border: none;
+  outline: none;
+}
+select {
+  cursor: pointer;
+}
+input {
+  padding: 0.8rem;
+}
+button {
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.48rem;
+  background-color: $main;
+  color: $white;
+  cursor: pointer;
+}
+a {
+  color: $heading;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.defaultPadding {
+  padding: $default_padding;
+}
+.mt4 {
+  margin-top: 4rem;
+}
+.mt3 {
+  margin-top: 3rem;
+}
+.mt2 {
+  margin-top: 2rem;
+}
+.mt1 {
+  margin-top: 1rem;
+}
+.mrlAuto {
+  margin: 0.1rem auto;
+}
+@media only screen and (max-width: 1196px) {
+  .defaultPadding {
+    padding: 0.23rem 5rem;
+  }
+}
+@media only screen and (max-width: 1178px) {
+  .defaultPadding {
+    padding: 0.23rem 4.8rem;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .defaultPadding {
+    padding: 0.23rem 4rem;
+  }
+}
+@media only screen and (max-width: 827px) {
+  .defaultPadding {
+    padding: 0.23rem 3rem;
+  }
+}
+@media only screen and (max-width: 573px) {
+  .defaultPadding {
+    padding: 0.23rem 1.5rem;
+  }
+}
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.dble{
+  pointer-events: none;
+}
+.active-search-li{
+  background-color: $redish;
+  a{
+    color: $white;
+  }
+  &:hover a{
+    color: $black;
+  }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+a.btn{
+  padding: 0.5rem 2rem;
+}
+.bg-main{
+  background-color: $main;
+  color: $white;
+}
+.d-flex-center-a-j{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.br-15{
+  border-radius: 15px;
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.badge {
+  padding: 0.6rem 1rem;
+  border-radius: 15px;
+}
+.green {
+  background-color: #e6faee;
+  color: #43dc80;
+}
+.orange {
+  background-color: #fff2dd;
+  color: #ffac30;
+}
+.red{
+  background-color: #ffefee;
+  color: #FF4C41;
+}
+.ofd{ 
+  background-color: #f3edfa;
+  color: #864AD1;
+}

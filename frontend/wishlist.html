@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <title>Document</title>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/sweetalert.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+  </head>
+  <body>
+    <div class="responsive-search" id="rss">
+      <div class="closediv">
+        <i class="uil uil-times" onclick="closerss()"></i>
+      </div>
+      <div class="seachbox">
+        <form action="#">
+          <input type="text" placeholder="Search Product here" />
+          <button>
+            <i class="uil uil-search"></i>
+          </button>
+        </form>
+        <div class="location fadeup">
+          <input
+            type="text"
+            placeholder="Search category here"
+            id="locatin_search"
+            oninput="search_city()"
+          />
+          <ul>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">Mumbai</a>
+            </li>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">kolkata</a>
+            </li>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">delhi</a>
+            </li>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">chennai</a>
+            </li>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">west bengal</a>
+            </li>
+            <li>
+              <i class="uil uil-location-point"></i>
+              <a href="" class="lcn-search">maharastra</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="top-header">
+        <div class="th">
+          <div class="logo">
+            <a href="index.html">
+              <img src="assets/images/logo.png" alt="logo" />
+            </a>
+          </div>
+          <div class="name">
+            Krables <br />
+            <span>Market</span>
+          </div>
+          <div class="selecloc">
+            <div class="dropdown" tabindex="0">
+              <div class="text">
+                <i class="uil uil-location-point"></i>
+                Gurugram
+              </div>
+              <i class="uil uil-angle-down icon__14"></i>
+            </div>
+            <div class="location fadeup" id="lcnpnl">
+              <input
+                type="text"
+                placeholder="Search here"
+                id="location_search"
+                oninput="search_city()"
+              />
+              <ul>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">Mumbai</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">kolkata</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">delhi</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">chennai</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">west bengal</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="" class="lcn-search">maharastra</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="searchbox">
+            <span>
+              <i class="uil uil-create-dashboard" onclick="show_cat()"></i>
+              <i class="uil uil-angle-down icon__14" onclick="show_cat()"></i>
+            </span>
+            <form action="index.html" method="GET">
+              <input type="hidden" value="14" name="d" />
+              <input type="text" placeholder="Search Products" name="f" />
+              <button>
+                <i class="uil uil-search"></i>
+              </button>
+            </form>
+            <div class="location fadeup" id="ctcnpnl">
+              <input
+                type="text"
+                placeholder="Search here"
+                id="cat_search"
+                oninput="search_cat()"
+              />
+              <ul>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">electronics</a>
+                </li>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">food</a>
+                </li>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">home decoration</a>
+                </li>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">meal</a>
+                </li>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">new godds</a>
+                </li>
+                <li onclick="set(this)">
+                  <i class="uil uil-apps"></i>
+                  <a href="" class="cn-search">maharastra</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rightbox">
+            <ul>
+              <li>
+                <a href="" class="rightlink">
+                  <i class="uil uil-phone-alt"></i>
+                  1800-000-0000
+                </a>
+              </li>
+              <li>
+                <a href="" class="rightlink">
+                  <i class="uil uil-gift"></i>
+                  Offers
+                </a>
+              </li>
+              <li>
+                <a href="" class="rightlink">
+                  <i class="uil uil-question-circle"></i>
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="" class="rightlink wl">
+                  <i class="uil uil-heart icon_wishlist"></i>
+                  <span class="noti_count1">3</span>
+                </a>
+              </li>
+              <li class="user">
+                <a href="#" class="rightlink">
+                  <i class="uil uil-user-circle bg" onclick="show_userpanel()">
+                  </i>
+                </a>
+                <div class="userpanel fadeup" id="userpanel">
+                  <ul>
+                    <li>
+                      <i class="uil uil-chat-bubble-user"></i
+                      ><a href="">My Account</a>
+                    </li>
+                    <li><i class="uil uil-box"></i><a href="">My Orders</a></li>
+                    <li>
+                      <i class="uil uil-heart-alt"></i
+                      ><a href="">My Wishlist</a>
+                    </li>
+                    <li>
+                      <i class="uil uil-shopping-cart"></i
+                      ><a href="">My Cart</a>
+                    </li>
+                    <li>
+                      <i class="uil uil-wallet"></i><a href="">My Wallet</a>
+                    </li>
+                    <li>
+                      <i class="uil uil-map-marker-alt"></i
+                      ><a href="">My Address</a>
+                    </li>
+                    <li><i class="uil uil-signin"></i><a href="">Login</a></li>
+                    <li>
+                      <i class="uil uil-signout"></i><a href="">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-header">
+        <div class="sub-header">
+          <div class="hamberger" onclick="sidebar()">
+            <i class="uil uil-bars"></i>
+          </div>
+          <nav>
+            <div class="div">Home</div>
+            <div class="div">
+              cat1
+              <i class="uil uil-angle-down icon__14"></i>
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat2
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat3
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat4
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat5
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat1
+              <i class="uil uil-angle-down icon__14"></i>
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat2
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat3
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat4
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="div">
+              cat5
+              <i class="uil uil-angle-down icon__14"></i>
+
+              <div class="userpanel fadeup" id="userpanel">
+                <ul>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="">My Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="">My Cart</a>
+                  </li>
+                  <li>
+                    <a href="">My Wallet</a>
+                  </li>
+                  <li>
+                    <a href="">My Address</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="cart-right">
+            <i class="uil uil-shopping-cart-alt"></i>Cart
+          </div>
+          <div class="srch" onclick="openrss()">
+            <i class="uil uil-search"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="slider" id="sidebar">
+      <ul>
+        <li class="flex flex-center"><a href=""> Home </a></li>
+        <li>
+          <span class="flex flex-center" onclick="expand(this)">
+            Cat 1
+            <i class="uil uil-angle-down icon__14"></i>
+          </span>
+          <ul class="inner-ul">
+            <li class="inner-li">fdg</li>
+            <li class="inner-li">fdg</li>
+            <li class="inner-li">fdg</li>
+          </ul>
+        </li>
+        <li>
+          <span class="flex flex-center" onclick="expand(this)">
+            Cat 1
+            <i class="uil uil-angle-down icon__14"></i>
+          </span>
+          <ul class="inner-ul">
+            <li class="inner-li">fdg</li>
+            <li class="inner-li">fdgg</li>
+            <li class="inner-li">fdg</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="path">
+      <div class="container">
+        <a href="index.html">Home</a>
+        /
+        <a href="index.html">My Wishlist</a>
+      </div>
+    </div>
+    <section class="wishlist">
+      <div class="headbanner">
+        <div class="userimage">
+          <img src="assets/images/img-5.jpg" alt="" />
+        </div>
+        <h4>Jhon Doe</h4>
+        <p>
+          +91 1245789630
+          <a href="#"><i class="uil uil-edit"></i></a>
+        </p>
+        <div class="earn-points">
+          <img src="assets/images/Dollar.svg" alt="" />Ballance :
+          <span>&#8377;20</span>
+        </div>
+      </div>
+      <section class="myac-body">
+        <div class="flex row">
+          <div class="left">
+            <div class="ul-wrapper">
+              <ul>
+                <li>
+                  <i class="uil uil-apps"></i>
+                  <a href="">Overview</a>
+                </li>
+                <li>
+                  <i class="uil uil-box"></i>
+                  <a href="">My Orders</a>
+                </li>
+                <li>
+                  <i class="uil uil-wallet"></i>
+                  <a href="">My Wallet</a>
+                </li>
+                <li class="active">
+                  <i class="uil uil-heart"></i>
+                  <a href="">My Wishlist</a>
+                </li>
+                <li>
+                  <i class="uil uil-location-point"></i>
+                  <a href="">My Address</a>
+                </li>
+                <li>
+                  <i class="uil uil-sign-out-alt"></i>
+                  <a href="">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <h4><i class="uil uil-heart"></i>My Wishlist</h4>
+            <div class="col-lg-12 col-md-12">
+              <div class="pdpt-bg">
+                <div class="wish-item">
+                  <div class="cart-product-img">
+                    <img src="assets/images/product/big-2.jpg" alt="" />
+                    <div class="offer-badge">4% OFF</div>
+                  </div>
+                  <div class="cart-text">
+                    <h4>Product Title Here</h4>
+                    <div class="cart-item-price">$15 <span>$18</span></div>
+                    <button type="button" class="cart-close-btn">
+                      <i class="uil uil-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="wish-item">
+                  <div class="cart-product-img">
+                    <img src="assets/images/product/big-2.jpg" alt="" />
+                    <div class="offer-badge">4% OFF</div>
+                  </div>
+                  <div class="cart-text">
+                    <h4>Product Title Here</h4>
+                    <div class="cart-item-price">$15 <span>$18</span></div>
+                    <button type="button" class="cart-close-btn">
+                      <i class="uil uil-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="wish-item">
+                  <div class="cart-product-img">
+                    <img src="assets/images/product/big-2.jpg" alt="" />
+                    <div class="offer-badge">4% OFF</div>
+                  </div>
+                  <div class="cart-text">
+                    <h4>Product Title Here</h4>
+                    <div class="cart-item-price">$15 <span>$18</span></div>
+                    <button type="button" class="cart-close-btn">
+                      <i class="uil uil-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="defaultPadding mt4 footer">
+      <div class="footer-row1">
+        <div class="container">
+          <div class="row flex">
+            <ul class="ul1">
+              <li>
+                <a href="#">
+                  <i class="uil uil-dialpad-alt"></i>
+                  1800-000-000
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="uil uil-envelope-alt"></i>
+                  info@Krables.com
+                </a>
+              </li>
+            </ul>
+            <ul class="ul2">
+              <li>
+                <a href="#">
+                  <i class="uil uil-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="uil uil-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="uil uil-google"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="uil uil-linkedin-alt"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-row2">
+        <div class="container">
+          <div class="row">
+            <ul class="ul1">
+              <li class="heading">
+                <h4>Categories</h4>
+              </li>
+              <ul class="ul-sub">
+                <li>Fruits and Vegetables</li>
+                <li>Grocery & Staples</li>
+                <li>Dairy & Eggs</li>
+                <li>Beverages</li>
+                <li>Snacks</li>
+                <li>Fruits and Vegetables</li>
+                <li>Grocery & Staples</li>
+                <li>Dairy & Eggs</li>
+                <li>Beverages</li>
+                <li>Snacks</li>
+              </ul>
+            </ul>
+            <ul class="ul1">
+              <li class="heading">
+                <h4>Usefull Links</h4>
+              </li>
+              <ul class="ul-sub">
+                <li>Fruits and Vegetables</li>
+                <li>Dairy & Eggs</li>
+                <li>Beverages</li>
+                <li>Snacks</li>
+                <li>Snacks</li>
+                <li>Beverages</li>
+                <li>Snacks</li>
+              </ul>
+            </ul>
+            <ul class="ul1">
+              <li class="heading">
+                <h4>Top Cities</h4>
+              </li>
+              <ul class="ul-sub">
+                <li>Fruits and Vegetables</li>
+                <li>Grocery & Staples</li>
+                <li>Snacks</li>
+                <li>Fruits and</li>
+                <li>Grocery & Staples</li>
+                <li>Dairy & Eggs</li>
+                <li>Beverages</li>
+                <li>Snacks</li>
+              </ul>
+            </ul>
+            <ul class="ul1">
+              <li class="heading">
+                <h4>Download App</h4>
+              </li>
+              <ul class="ul-sub da">
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/download-1.svg" alt="" />
+                  </a>
+                </li>
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/download-2.svg" alt="" />
+                  </a>
+                </li>
+              </ul>
+              <li class="heading thd">
+                <h4><b>Payment Mode</b></h4>
+              </li>
+              <ul class="ul-sub t flex">
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/pyicon-1.svg" alt="" />
+                  </a>
+                </li>
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/pyicon-2.svg" alt="" />
+                  </a>
+                </li>
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/pyicon-3.svg" alt="" />
+                  </a>
+                </li>
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/pyicon-4.svg" alt="" />
+                  </a>
+                </li>
+                <li class="dbnt">
+                  <a href="">
+                    <img src="assets/images/svg/pyicon-6.svg" alt="" />
+                  </a>
+                </li>
+              </ul>
+              <li class="heading thd">
+                <h4><b>News Letter</b></h4>
+              </li>
+              <ul class="ul-sub t flex nl">
+                <form action="#">
+                  <input type="text" name="" placeholder="Email Address" />
+                  <button><i class="uil uil-telegram-alt"></i></button>
+                </form>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-3">
+        <span> Copyright 2021 Ask In City . All rights reserved </span>
+      </div>
+    </section>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+  </body>
+</html>

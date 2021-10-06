@@ -1,0 +1,199 @@
+.right-part {
+  .cartrow {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    .gh {
+      width: 100%;
+      padding: 1.5rem 2rem;
+      .heading {
+        padding: 3rem 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: $white;
+        width: 99%;
+        border-radius: 5px 5px 0 0;
+        border-bottom: 1px solid $border;
+        h3 {
+          font-size: 2rem;
+          text-transform: capitalize;
+        }
+      }
+      .maincontainer2 {
+        background-color: $white;
+        border-radius: 0 0 5px 5px;
+        width: 99%;
+        form {
+          padding: 1rem 0.8rem;
+          .formrow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            align-items: center;
+            .btn{
+              margin-left: auto;
+              i{
+                margin-right: 0.5rem;
+              }
+              span{
+                font-size: 1.4rem;
+              }
+            }
+            .heading {
+              font-size: 1.5rem;
+              width: 18rem;
+              border-bottom: none;
+              padding: 0 0 0 0.9rem;
+              font-weight: 600;
+              color: #7e7e7e;
+            }
+            input,
+            select {
+              height: 4.29rem;
+              width: 90%;
+              padding: 0 0.9rem;
+              border: 0.5px solid #eee;
+              border-radius: 15px;
+              display: flex;
+              align-items: center;
+            }
+            textarea {
+              height: 18rem;
+              width: 90%;
+              padding: 1.5rem 1rem;
+              border: 0.5px solid #eee;
+              border-radius: 15px;
+              display: flex;
+              align-items: center;
+              resize: none;
+              outline: none;
+            }
+            .imgdiv {
+              width: 23rem;
+              height: 25rem;
+              .img {
+                height: 80%;
+                border: 2px solid #eee;
+                border-radius: 5px 5px 0 0;
+              }
+              .file {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-content: space-between;
+              }
+              label {
+                display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer;
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                text-align: center;
+                background-color: #eee;
+                color: #7e7e7e;
+                font-size: 1.4rem;
+              }
+              input[type="file"] {
+                width: 100%;
+                display: none;
+                height: 2rem;
+              }
+            }
+          }
+          .f {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 711px) {
+  .right-part {
+    .cartrow {
+      .gh {
+        padding: 1.5rem 0.5rem;
+        .maincontainer2 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 562px) {
+  .right-part {
+    .cartrow {
+      .gh {
+        padding: 1.5rem 0.5rem;
+        .maincontainer2 {
+          form {
+            .formrow {
+              flex-direction: column;
+              align-items: flex-start;
+              .heading {
+                padding: 0.7rem 0.8rem;
+              }
+              input,
+              select,
+              textarea {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1335px) {
+  .right-part .cartrow .gh .maincontainer2 form .formrow .imgdiv {
+    width: 20rem;
+  }
+}
+@media only screen and (max-width: 1186px) {
+  .right-part .cartrow .gh .maincontainer2 form .ig {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: flex-end;
+    .imgdiv {
+      width: 32rem;
+      height: 35rem;
+    }
+  }
+}
+@media only screen and (max-width: 937px) {
+  .right-part .cartrow .gh .maincontainer2 form .ig {
+    .imgdiv {
+      width: 30rem;
+      height: 33rem;
+      margin: 0 0.2rem;
+    }
+  }
+}
+@media only screen and (max-width: 644px) {
+  .right-part .cartrow .gh .maincontainer2 form .ig {
+    .imgdiv {
+      width: 26rem;
+      height: 29rem;
+    }
+  }
+}
+@media only screen and (max-width: 562px) {
+  .right-part .cartrow .gh .maincontainer2 form .ig {
+    .imgdiv {
+      width: 20rem;
+      height: 25rem;
+    }
+  }
+}
+@media only screen and (max-width: 454px) {
+  .right-part .cartrow .gh .maincontainer2 form .ig {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    .imgdiv {
+      width: auto;
+      height: 39rem;
+    }
+  }
+}

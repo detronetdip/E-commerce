@@ -1,0 +1,199 @@
+.footer {
+  background-color: $white;
+  padding: 0.2rem;
+  .footer-row1 {
+    padding: 20px 0;
+    border-bottom: 1px solid #f5f5f5;
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      .ul1 {
+        list-style: none;
+        display: flex;
+        li {
+          margin: 0.2rem 1rem;
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #3e3f5e;
+            i {
+              color: $redish;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+      .ul2 {
+        list-style: none;
+        display: flex;
+        margin-left: auto;
+        li {
+          margin: 0.2rem 0.5rem;
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #3e3f5e;
+            i {
+              color: #3e3f5e;
+              margin-right: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-row2 {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #f5f5f5;
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      .row {
+        padding-top: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        justify-content: space-around;
+        .ul1 {
+          list-style: none;
+          .heading {
+            h4 {
+              color: #2b2f4c;
+              font-size: 18px;
+              font-weight: 500;
+              text-align: left;
+              margin-bottom: 17px;
+            }
+          }
+          .ul-sub {
+            list-style: none;
+            padding-top: 1rem;
+            li {
+              color: #3e3f5e;
+              font-size: 14px;
+              font-weight: 400;
+              text-align: left;
+              position: relative;
+              left: 0;
+              padding-bottom: 0.9rem;
+            }
+            .dbnt {
+              height: 4rem;
+              display: flex;
+              text-align: left;
+              a {
+                margin-right: 0;
+              }
+            }
+          }
+          .t {
+            padding-top: 0.5rem;
+            .dbnt {
+              height: 2.5rem;
+              margin: 0.1rem 0.32rem;
+            }
+            form {
+              border: 1px solid $border;
+              border-radius: 5px;
+              button {
+                background-color: $redish;
+              }
+            }
+          }
+          .thd {
+            margin-top: 2em;
+          }
+        }
+      }
+    }
+  }
+  .footer-3 {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 1.2rem;
+      color: #3e3f5e;
+    }
+  }
+}
+@media only screen and (max-width: 481px) {
+  .footer {
+    .footer-row1 {
+      .container {
+        .ul1 {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 816px) {
+  .footer {
+    .footer-row2 {
+      .container {
+        .row {
+          grid-template-columns: auto auto;
+          .ul1 {
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 523px) {
+  .footer {
+    .footer-row2 {
+      .container {
+        .row {
+          padding-left: 0rem;
+          padding-right: 0rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .footer {
+    .footer-row2 {
+      .container {
+        .row {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          .ul1 {
+            width: 100%;
+            .da {
+              display: flex;
+            }
+            .nl {
+              width: 100%;
+              form {
+                width: 100%;
+                input {
+                  width: 85%;
+                }
+                button {
+                  width: 14%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

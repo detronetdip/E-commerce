@@ -1,0 +1,111 @@
+.pdpt-bg {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 #e9e9e9;
+    .pdpt-title {
+      h4 {
+        border-bottom: 1px solid #efefef;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #2b2f4c;
+      }
+    }
+    .order-body10 {
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .history-list {
+        list-style: none;
+        li {
+          display: block;
+          padding: 20px;
+          border-bottom: 1px solid #efefef;
+          .purchase-history {
+            display: flex;
+            align-items: center;
+            .purchase-history-left {
+              h4 {
+                font-size: 16px;
+                color: #2b2f4c;
+                margin-bottom: 8px;
+                text-align: left;
+                font-weight: 500;
+              }
+              p {
+                font-size: 14px;
+                font-weight: 500;
+                color: #3e3f5e;
+                text-align: left;
+                margin-bottom: 8px;
+                line-height: 24px;
+                ins {
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  color: $main;
+                }
+              }
+              span {
+                font-weight: 400;
+                font-size: 13px;
+                color: #3e3f5e;
+                text-align: left;
+                display: block;
+              }
+            }
+            .purchase-history-right {
+              margin-left: auto;
+              text-align: center;
+              span {
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                color: $main !important;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .pdpt-bg2 {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    .imgbox {
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      background: #f9f9f9;
+      border-radius: 100%;
+      border: 2px solid #efefef;
+      padding: 18px 0;
+      img {
+        border-radius: inherit;
+      }
+    }
+    .rewrd-title {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+      color: #3e3f5e;
+      font-size: 14px;
+      text-align: center;
+    }
+    .cashbk-price {
+      color: #2b2f4c;
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
