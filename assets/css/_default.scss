@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: $background;
+}
+input,
+select {
+  border: none;
+  outline: none;
+}
+select {
+  cursor: pointer;
+}
+input {
+  padding: 0.8rem;
+}
+input[type="radio"]{
+  accent-color: $redish;
+}
+button {
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.48rem;
+  background-color: $redish;
+  color: $white;
+  cursor: pointer;
+}
+a {
+  color: $heading;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.defaultPadding {
+  padding: $default_padding;
+}
+.mt4 {
+  margin-top: 4rem;
+}
+.mt3 {
+  margin-top: 3rem;
+}
+.mt2 {
+  margin-top: 2rem;
+}
+.mt1 {
+  margin-top: 1rem;
+}
+.mrlAuto {
+  margin: 0.1rem auto;
+}
+@media only screen and (max-width: 1196px) {
+  .defaultPadding {
+    padding: 0.23rem 5rem;
+  }
+}
+@media only screen and (max-width: 1178px) {
+  .defaultPadding {
+    padding: 0.23rem 4.8rem;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .defaultPadding {
+    padding: 0.23rem 4rem;
+  }
+}
+@media only screen and (max-width: 827px) {
+  .defaultPadding {
+    padding: 0.23rem 3rem;
+  }
+}
+@media only screen and (max-width: 573px) {
+  .defaultPadding {
+    padding: 0.23rem 1.5rem;
+  }
+}
+.pt-3,
+.py-3 {
+  padding-top: 1rem !important;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.dble{
+  pointer-events: none;
+}
+.active-search-li{
+  background-color: $redish;
+  a{
+    color: $white;
+  }
+  &:hover a{
+    color: $black;
+  }
+}
