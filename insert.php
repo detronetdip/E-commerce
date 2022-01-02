@@ -9,10 +9,6 @@ if(isset($_POST['orderId_user'])){
 $MERCHANT_KEY = "***REMOVED***"; 
 $SALT = "***REMOVED***";
 
-/* 
-  $MERCHANT_KEY = "oHfhLAgb"; 
-  $SALT = "idKLJeGPqc";
-*/
 $txnid = $row['txnid'];
 $name =$row['user_name'];
 $mobile =$row['user_mobile'];
