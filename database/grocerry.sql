@@ -367,8 +367,8 @@ CREATE TABLE `orders` (
   `udvc` int(11) NOT NULL,
   `is_p_app` int(11) NOT NULL,
   `is_w_ap` int(11) NOT NULL,
-  `prmo` int(11) NOT NULL,
-  `wlmt` int(11) NOT NULL
+  `prmo` float NOT NULL,
+  `wlmt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
