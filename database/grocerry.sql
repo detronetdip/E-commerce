@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2022 at 02:41 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Generation Time: Sep 27, 2021 at 04:28 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dfg`
+-- Database: `grocerry`
 --
 
 -- --------------------------------------------------------
@@ -68,9 +68,7 @@ CREATE TABLE `business_type` (
 --
 
 INSERT INTO `business_type` (`id`, `type`) VALUES
-(4, 'Partnership'),
-(5, 'Nonprofit corporation'),
-(6, 'S corporation');
+(2, 'one');
 
 -- --------------------------------------------------------
 
@@ -96,12 +94,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `u_id`, `total`, `is_applied`, `promo`, `is_add_w`, `wl_amt`, `final_amt`, `ship_fee`, `belonging_city`) VALUES
-(8, 1, 0, 0, 0, 0, 0, 30, 30, 3),
-(9, 5, 54.6, 0, 0, 0, 0, 54.6, 0, 3),
-(10, 4, 588.5, 0, 0, 0, 0, 588.5, 0, 3),
-(11, 5, 300, 0, 0, 0, 0, 300, 0, 10),
-(12, 6, 367.5, 0, 0, 0, 0, 367.5, 0, 11),
-(13, 7, 150, 0, 0, 0, 0, 150, 0, 10);
+(8, 1, 0, 0, 0, 0, 0, 30, 30, 3);
 
 -- --------------------------------------------------------
 
@@ -115,20 +108,6 @@ CREATE TABLE `cart_detail` (
   `p_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart_detail`
---
-
-INSERT INTO `cart_detail` (`id`, `cart_id`, `p_id`, `qty`) VALUES
-(16, 9, 3, 3),
-(17, 9, 2, 2),
-(18, 9, 1, 1),
-(19, 10, 10, 1),
-(20, 10, 15, 1),
-(21, 11, 14, 2),
-(22, 12, 25, 1),
-(23, 13, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -147,10 +126,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`, `status`) VALUES
-(8, 'Handmade Bags', 1),
-(9, 'Handmade Jwellery', 1),
-(10, 'Decorative Items', 1),
-(11, 'FlowerPots', 1);
+(2, 'cat1', 1),
+(3, 'cat2', 1),
+(4, 'cat3', 1),
+(5, 'cat4', 1),
+(6, 'cat5', 1),
+(7, 'cat6', 1);
 
 -- --------------------------------------------------------
 
@@ -170,12 +151,14 @@ CREATE TABLE `city` (
 --
 
 INSERT INTO `city` (`id`, `s_id`, `c_id`, `city_name`) VALUES
+(2, 1, 1, 'Midnapur'),
 (3, 1, 1, 'kolkata'),
-(5, 2, 1, 'Gandhinagar'),
-(6, 3, 1, 'Hyderabad'),
-(7, 5, 1, 'Banglore'),
-(10, 8, 1, 'Wardha'),
-(11, 8, 1, 'Nagpur');
+(4, 2, 1, 'ca'),
+(5, 2, 1, 'cb'),
+(6, 3, 1, 'cc'),
+(7, 3, 1, 'cd'),
+(8, 4, 1, 'ce'),
+(9, 4, 1, 'cf');
 
 -- --------------------------------------------------------
 
@@ -218,10 +201,9 @@ CREATE TABLE `commission` (
 --
 
 INSERT INTO `commission` (`id`, `scat_id`, `com`) VALUES
-(12, 12, 1),
-(13, 13, 2),
-(14, 14, 1),
-(15, 15, 3);
+(5, 5, 15),
+(6, 6, 16),
+(11, 11, 12);
 
 -- --------------------------------------------------------
 
@@ -263,6 +245,29 @@ INSERT INTO `dc` (`id`, `dc`, `pc`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `delivery_boy`
+--
+
+CREATE TABLE `delivery_boy` (
+  `id` int(11) NOT NULL,
+  `dv_name` varchar(255) NOT NULL,
+  `dv_username` varchar(255) NOT NULL,
+  `dv_password` text NOT NULL,
+  `dv_email` varchar(255) NOT NULL,
+  `dv_mobile` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `delivery_boy`
+--
+
+INSERT INTO `delivery_boy` (`id`, `dv_name`, `dv_username`, `dv_password`, `dv_email`, `dv_mobile`) VALUES
+(1, 'soumya ghosh', 'soumya_g', '$2y$10$01rbQRUeYkZmWqYzPgrce.P9BvsJo4XHCxkTOeeXxiblNzfEoeLjS', 'fg@gmail.com', '4567891230'),
+(2, 'aj', 'ert', '$2y$10$d8Ps3eVcW3s64xBDrzjAWuhIFSBlgzQ7cF4vFa/jzByUHu7voefvC', 's@gmail.com', '2345678901');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dv_time`
 --
 
@@ -280,6 +285,46 @@ INSERT INTO `dv_time` (`id`, `from`, `tto`) VALUES
 (2, '10:32', '11:33'),
 (3, '12:34', '13:35'),
 (4, '14:35', '15:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `filter`
+--
+
+CREATE TABLE `filter` (
+  `id` int(11) NOT NULL,
+  `subcat_id` int(11) NOT NULL,
+  `filter` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `filter`
+--
+
+INSERT INTO `filter` (`id`, `subcat_id`, `filter`) VALUES
+(3, 5, 'filter1'),
+(4, 5, 'filter2'),
+(5, 6, 'filter3'),
+(6, 8, 'dfg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `isue`
+--
+
+CREATE TABLE `isue` (
+  `id` int(11) NOT NULL,
+  `oid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `isue`
+--
+
+INSERT INTO `isue` (`id`, `oid`) VALUES
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -330,12 +375,12 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `o_id`, `u_id`, `ad_id`, `dv_date`, `dv_time`, `payment_type`, `payment_status`, `order_status`, `mihpayid`, `txnid`, `payu_status`, `total_amt`, `ship_fee_order`, `final_val`, `isnew`, `delivered_by`, `u_cnfrm`, `ptu`, `udvc`, `is_p_app`, `is_w_ap`, `prmo`, `wlmt`) VALUES
-(1, 'ODP741632491075', 1, 4, '4', 'Today', 2, 1, 5, '9084294943', 'acc5eb0d820b5557946b', 'success', 37.14, 0, 37.14, 0, 1, 1, 1, 0, 0, 0, 0, 0),
-(4, 'ODK801632494410', 1, 4, '3', 'Today', 2, 1, 7, '9084294961', '5f53e348a279f8484d10', 'success', 19.68, 0, 19.68, 0, 1, 0, 0, 0, 0, 0, 0, 0),
-(5, 'ODT981632503623', 1, 4, '2', 'Tomorrow', 2, 1, 6, '9084294996', '1bb43363ed643025abbd', 'success', 6.66, 30, 36.66, 0, 1, 0, 0, 1, 0, 0, 0, 0),
-(8, 'ODR301632568756', 1, 4, '3', 'Today', 1, 0, 5, '', 'fc2c2079c9787188d829', '', 17.76, 0, 17.76, 0, 1, 1, 1, 0, 0, 0, 0, 0),
-(9, 'ODN321632738577', 1, 4, '4', 'Today', 2, 1, 5, '9084295789', 'b2e54a9658c3d44f0fea', 'success', 6.66, 30, 35.99, 0, 1, 1, 1, 0, 0, 0, 0, 0);
+INSERT INTO `orders` (`id`, `o_id`, `u_id`, `ad_id`, `dv_date`, `dv_time`, `payment_type`, `payment_status`, `order_status`, `mihpayid`, `txnid`, `payu_status`, `total_amt`, `ship_fee_order`, `final_val`, `isnew`, `delivered_by`, `u_cnfrm`, `ptu`, `udvc`) VALUES
+(1, 'ODP741632491075', 1, 4, '4', 'Today', 2, 1, 5, '9084294943', 'acc5eb0d820b5557946b', 'success', 37.14, 0, 37.14, 0, 1, 1, 1, 0),
+(4, 'ODK801632494410', 1, 4, '3', 'Today', 2, 1, 7, '9084294961', '5f53e348a279f8484d10', 'success', 19.68, 0, 19.68, 0, 1, 0, 0, 0),
+(5, 'ODT981632503623', 1, 4, '2', 'Tomorrow', 2, 1, 6, '9084294996', '1bb43363ed643025abbd', 'success', 6.66, 30, 36.66, 0, 1, 0, 0, 1),
+(8, 'ODR301632568756', 1, 4, '3', 'Today', 1, 0, 5, '', 'fc2c2079c9787188d829', '', 17.76, 0, 17.76, 0, 1, 1, 1, 0),
+(9, 'ODN321632738577', 1, 4, '4', 'Today', 2, 1, 5, '9084295789', 'b2e54a9658c3d44f0fea', 'success', 6.66, 30, 35.99, 0, 1, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -393,7 +438,9 @@ INSERT INTO `order_status` (`id`, `o_status`) VALUES
 (2, 'Placed'),
 (3, 'Assigned'),
 (4, 'Out for delivery'),
-(5, 'Delivered');
+(5, 'Delivered'),
+(6, 'Undelivered'),
+(7, 'Issue');
 
 -- --------------------------------------------------------
 
@@ -488,9 +535,7 @@ INSERT INTO `pin` (`id`, `c_id`, `s_id`, `cn_id`, `pincode`) VALUES
 (5, 6, 3, 1, '452577'),
 (6, 7, 3, 1, '564678'),
 (7, 9, 4, 1, '478587'),
-(8, 8, 4, 1, '75678678'),
-(9, 10, 8, 1, '442001'),
-(10, 11, 8, 1, '440001');
+(8, 8, 4, 1, '75678678');
 
 -- --------------------------------------------------------
 
@@ -529,19 +574,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `cat_id`, `scat_id`, `product_name`, `img1`, `img2`, `img3`, `img4`, `price`, `sell_price`, `fa`, `shrt_desc`, `description`, `qty`, `disclaimer`, `isappp`, `isnew`, `bs`, `status`, `added_by`, `belonging_city`, `tax`, `sku`) VALUES
-(14, 9, 13, 'Estele', '6404705071641059737.jpg', '6593052181641059737.jpg', '7479404021641059738.jpg', '6577147951641059738.jpg', 150, 150, 150, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 9, 10, 0, 'Q12BU33K'),
-(15, 11, 15, 'Flower', '4892933501641059856.jpg', '1574421381641059856.jpg', '1656264271641059856.jpg', '1430171281641059856.jpg', 400, 350, 388.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 9, 10, 10, 'Q38FS65C'),
-(16, 11, 15, 'FlowerPots', '4916963741641059952.jpg', '1785742551641059952.jpg', '9008233371641059952.jpg', '3401424781641059952.jpg', 300, 280, 280, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 9, 10, 0, 'N88KO31E'),
-(17, 11, 15, 'Kraft Seeds Plastic Hanging Planter', '7190920041641060216.jpeg', '5647072581641060216.jpeg', '4893556641641060216.jpeg', '1532389551641060216.jpeg', 500, 470, 470, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 9, 10, 10, 'T30FL82I'),
-(18, 11, 15, 'GARDENS NEED', '3996609271641060296.jpg', '9474428161641060296.jpg', '2223990491641060296.jpg', '9576220081641060296.jpg', 399, 380, 399, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 9, 10, 5, 'N34HK35P'),
-(19, 9, 13, 'Generic', '4865346231641061013.jpg', '6098416521641061014.jpg', '7586908821641061014.jpg', '1294440261641061014.jpg', 300, 270, 283.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 10, 10, 5, 'A17WM27D'),
-(20, 10, 14, 'Decoration', '8355347361641061093.jpg', '9666502691641061093.jpg', '5221892081641061093.jpg', '9750278411641061093.jpg', 500, 450, 472.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 10, 10, 5, 'W44UY34C'),
-(21, 9, 13, 'ZENEME', '1758991241641061199.jpg', '5389483201641061199.jpg', '7757878611641061199.jpg', '3424783681641061199.jpg', 200, 150, 157.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 10, 10, 5, 'Y26SS75G'),
-(22, 10, 14, 'Decorative items', '3672123061641061370.jpg', '6412355921641061370.jpg', '8420361051641061370.jpg', '6853976941641061370.jpg', 400, 350, 388.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 10, 10, 10, 'G78SH88J'),
-(23, 10, 14, 'Zephyrr', '6173111701641061483.jpg', '5956085591641061483.jpg', '1376713181641061483.jpg', '3689873621641061483.jpg', 500, 450, 450, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 10, 10, 0, 'L11TD65X'),
-(24, 8, 12, 'Fostelo', '5061723371641064321.jpg', '2913096661641064321.jpg', '5306451821641064321.jpg', '8776506771641064321.jpg', 300, 280, 282.8, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 10, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 11, 11, 1, 'C97IX85O'),
-(25, 8, 12, 'Fristo', '7553257551641064388.jpg', '1310671241641064388.jpg', '4706658881641064388.jpg', '9105280101641064388.jpg', 400, 350, 367.5, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 11, 11, 5, 'T84KD52M'),
-(26, 8, 12, 'Envias', '4969358511641064449.jpg', '9179874421641064449.jpg', '3399996971641064449.jpg', '5314414051641064449.jpg', 400, 388, 391.88, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 20, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 1, 0, 0, 1, 11, 11, 1, 'V32UR43M');
+(1, 2, 6, 'product1', '2708601551631710744.jpg', '6275642921631707775.jpg', '7258851701631707775.jpg', '7095439061631707775.jpg', 15, 8, 8.88, 'vvv', 'vvv', 3, 'vvv', 1, 0, 0, 1, 1, 3, 10, 'E98FG31L'),
+(2, 2, 6, 'product2', '3442381381631707925.jpg', '1116090371631707925.jpg', '8974928531631707925.jpg', '6262277841631707925.jpg', 10, 6, 6.66, 'gtr', 'dfe', 3, 'fgh', 1, 0, 0, 1, 1, 3, 10, 'O43LT53C'),
+(3, 2, 5, 'product3', '8727043961631710656.jpg', '8014433021631710656.jpg', '4209091701631710656.jpg', '3590137711631710656.jpg', 15, 10, 10.8, 'rer', 'wer', 4, 're', 1, 0, 0, 1, 2, 3, 8, 'H92XA16C'),
+(4, 2, 6, 'product4', '7307345221631710721.jpg', '1294205181631710721.jpg', '2935377831631710721.jpg', '9686269221631710721.jpg', 14, 5, 7.75, 'er', 'dftrt', 3, 'rtg', 1, 0, 0, 1, 2, 3, 50, 'V64JQ93A'),
+(5, 3, 8, 'produtct5', '3640456001631711141.jpg', '5655238701631711141.jpg', '2713584571631711141.jpg', '7238793641631711141.jpg', 15, 10, 10.8, 'dfger', 'hrt', 4, 'ftg', 1, 0, 0, 1, 3, 5, 8, 'O47TE97E'),
+(6, 2, 6, 'product6', '5463402831631711251.jpg', '8921120011631711251.jpg', '9808095001631711251.jpg', '7987271131631711251.jpg', 12, 5, 5.55, 'cfdg gfrtr', 'd tgrt  zertge', 6, 'fgrets', 1, 0, 0, 1, 3, 5, 10, 'D79TL12L'),
+(7, 2, 6, 'product7', '8817477811631711454.jpg', '6837035241631711454.jpg', '9068199401631711454.jpg', '8523630731631711454.jpg', 15, 10, 11.9, 'bal rty th', 'grty', 8, 'ty hy by', 1, 0, 0, 1, 4, 6, 18, 'M78XI83S'),
+(8, 2, 6, 'product8', '5417813561631711516.jpg', '1690504191631711516.jpg', '3545360491631711516.jpg', '8940894321631711516.jpg', 40, 20, 31, 'gher rgerg  ghsy', 'get ty5y gert', 6, 'fghr shr', 1, 0, 0, 1, 4, 6, 50, 'P52LP92C');
 
 -- --------------------------------------------------------
 
@@ -567,25 +607,7 @@ INSERT INTO `product_ad_on` (`id`, `pid`, `added_on`) VALUES
 (5, 5, '2021-09-15 13:05:41'),
 (6, 6, '2021-09-15 13:07:31'),
 (7, 7, '2021-09-15 13:10:54'),
-(8, 8, '2021-09-15 13:11:56'),
-(9, 9, '2022-01-01 16:21:47'),
-(10, 10, '2022-01-01 16:41:22'),
-(11, 11, '2022-01-01 16:46:07'),
-(12, 12, '2022-01-01 16:50:52'),
-(13, 13, '2022-01-01 16:53:29'),
-(14, 14, '2022-01-01 17:55:37'),
-(15, 15, '2022-01-01 17:57:35'),
-(16, 16, '2022-01-01 17:59:12'),
-(17, 17, '2022-01-01 18:03:36'),
-(18, 18, '2022-01-01 18:04:55'),
-(19, 19, '2022-01-01 18:16:53'),
-(20, 20, '2022-01-01 18:18:12'),
-(21, 21, '2022-01-01 18:19:59'),
-(22, 22, '2022-01-01 18:22:50'),
-(23, 23, '2022-01-01 18:24:43'),
-(24, 24, '2022-01-01 19:12:01'),
-(25, 25, '2022-01-01 19:13:08'),
-(26, 26, '2022-01-01 19:14:09');
+(8, 8, '2021-09-15 13:11:56');
 
 -- --------------------------------------------------------
 
@@ -601,6 +623,33 @@ CREATE TABLE `promo` (
   `scat` int(11) NOT NULL,
   `adb` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `p_filter`
+--
+
+CREATE TABLE `p_filter` (
+  `id` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  `fid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `p_filter`
+--
+
+INSERT INTO `p_filter` (`id`, `pid`, `fid`) VALUES
+(2, 2, 5),
+(3, 3, 3),
+(4, 3, 4),
+(5, 4, 5),
+(7, 1, 5),
+(8, 5, 6),
+(9, 6, 5),
+(10, 7, 5),
+(11, 8, 5);
 
 -- --------------------------------------------------------
 
@@ -642,9 +691,7 @@ INSERT INTO `p_sfilter` (`id`, `pid`, `sfid`) VALUES
 (11, 6, 8),
 (12, 7, 5),
 (13, 7, 8),
-(14, 8, 5),
-(15, 9, 3),
-(16, 9, 4);
+(14, 8, 5);
 
 -- --------------------------------------------------------
 
@@ -706,9 +753,11 @@ CREATE TABLE `sellers` (
 --
 
 INSERT INTO `sellers` (`id`, `email`, `password`, `mobile`, `f_name`, `address`, `tob`, `country`, `state`, `city`, `pin`, `b_name`, `b_crft`, `is_gst`, `gst_id`, `gst_crft`, `acc_num`, `acc_holder`, `ifsc`, `bank`, `branch`, `isapp`, `is_new`, `is_cp`, `adhar`, `pan`, `status`) VALUES
-(9, 'SHG1', '$2y$10$82.4lsHSl5RSar4P3I8sb.JD7YT.HmUHWM4WJcDqc0I9svA1FzyCe', '9632587410', 'SHG1', 'Wardha', 5, 1, 8, 10, 9, 'SHG1', '7951967301641059230.jpg', 2, 'No GST', '0', '9807865490', 'SHG1', '234567890', 'Axis Bank', 'Axis Bank', 1, 0, 1, '3476878601641059230.jpg', '7191216161641059230.png', 1),
-(10, 'SHG2@gmail.com', '$2y$10$V3OyGn9GygYoj9HwEPHS/OzJwmDczTcdlye1UPzqD0LVMaIKU6MMS', '8965741235', 'SHG2', 'Nagpur', 5, 1, 8, 10, 9, 'SHG2', '5638819531641060832.jpg', 2, 'No GST', '0', '8965327412', 'SHG2', '741852', 'State Bank of India', 'State Bank of India', 1, 0, 1, '1634653491641060832.jpg', '9608478991641060832.png', 1),
-(11, 'SHG3@gmail.com', '$2y$10$d2S5EkdaYEaRW0Xq6oAqm.2Q3yk2euqr39bbNhpxu9lHGjmbJTZOW', '7854632105', 'SHG3', 'Nagpur', 4, 1, 8, 11, 10, 'SHG3', '3087442841641064182.jpg', 2, 'No GST', '0', '9865321423', 'SHG3', '786523', 'SBI', 'SBI', 1, 0, 1, '9483467891641064182.jpg', '7430720061641064182.png', 1);
+(1, 'a@gmail.com', '$2y$10$TXwDDRTUBIlbHYdxATYhN.Vty1lfv3dteU2raVxELDfmQQZSqhhDK', '1234', 'seller one', 'second colony vita rd', 2, 1, 1, 3, 2, 'sts pvt ltd', '5025762701631705532.jpg', 1, '345678', '5657500971631707171.jpg', '1234567892014', 'Seller one', 'IFGR7845G78', 'imgn bank', 'ihyu', 1, 0, 1, '4275501381631705532.jpg', '5841286131631705532.jpg', 1),
+(2, 'b@gmail.com', '$2y$10$6qbiXN5vi1ULvWV8BMWdo.l7PwSFE8jXRPWY76TFjFVrE/0J2bYZ2', '2134', 'seller two', 'def col dert', 2, 1, 1, 3, 2, 'df pvt ltd', '9836301121631706021.jpg', 1, '4785896', '2764390581631706021.jpg', '47857889658', 'dfert', 'dfgdrt', 'dfder', 'fderet', 1, 0, 1, '3583069461631706021.jpg', '1474921151631706021.jpg', 1),
+(3, 'c@gmail.com', '$2y$10$lGsqzbxSa4SuUl4KaB65mO2NjsgzGxy8IxV6IK.hEpWmFqHYDZtqS', '21345', 'seller three', 'dfer, kilop', 2, 1, 2, 5, 4, 'dfert fgty', '9138758831631706176.jpg', 1, '78458iuy478', '1145974301631707245.jpg', '784578145', 'yrtfgfh', 'dftert68fg', 'derteg gh', 'dgery', 1, 0, 1, '8740467731631706176.jpg', '9617084481631706176.jpg', 1),
+(4, 'd@gmail.com', '$2y$10$73T5Q57J4XQe.q9EA6NvaubL37e1tnrmgnb.FDHGaEDRSBneI5vG2', '3432', 'seller four', 'dferd fdre dfg', 2, 1, 3, 6, 5, 'frtrt g', '9978165481631706683.jpg', 1, '2345wer34', '6694375871631706683.jpg', '345678674532', 'ertf bght', 'rtrtrt', 'hy ghty', 'gfter', 1, 0, 1, '3334047291631706683.jpg', '3045160501631706683.jpg', 1),
+(5, 'v@gmail.com', '$2y$10$U0R195BQBa6qlQllAmXNJ.xJqj21cPqXDoXzDGNv/pCXptkMqCHHu', '2', 'd', '2', 2, 1, 1, 2, 1, 'e', '4565757941632666590.jpg', 2, 'No GST', '0', '23', 'ewe', 'fef', 'dk', 'defeffrf', 2, 0, 2, '1895423121632666590.jpg', '7202280821632666590.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -730,11 +779,7 @@ INSERT INTO `seller_wallet` (`id`, `seller_id`, `ballance`) VALUES
 (1, 2, 36.72),
 (2, 4, 0),
 (3, 1, 32.4184),
-(4, 3, 0),
-(5, 8, 0),
-(6, 9, 0),
-(7, 10, 0),
-(8, 11, 0);
+(4, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -792,10 +837,13 @@ CREATE TABLE `state` (
 --
 
 INSERT INTO `state` (`id`, `c_id`, `state_name`) VALUES
-(2, 1, 'Gujarat'),
-(3, 1, 'Andhra Pradesh'),
-(5, 1, 'Karnataka'),
-(8, 1, 'Maharashtra');
+(1, 1, 'west bengal'),
+(2, 1, 'gujrat'),
+(3, 1, 'hydrabad'),
+(4, 1, 'punjab'),
+(5, 1, 'karnatak'),
+(6, 1, 'bihar'),
+(7, 1, 'up');
 
 -- --------------------------------------------------------
 
@@ -815,10 +863,34 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`id`, `cat_id`, `subcat`, `status`) VALUES
-(12, 8, 'Bags', 1),
-(13, 9, 'Jwellery', 1),
-(14, 10, 'Decoration', 1),
-(15, 11, 'FlowerPots', 1);
+(5, 2, 'scat1', 1),
+(6, 2, 'scat2', 0),
+(11, 3, 'scat3', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_filter`
+--
+
+CREATE TABLE `sub_filter` (
+  `id` int(11) NOT NULL,
+  `filter_id` int(11) NOT NULL,
+  `subfilter` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sub_filter`
+--
+
+INSERT INTO `sub_filter` (`id`, `filter_id`, `subfilter`) VALUES
+(3, 3, 'sf1'),
+(4, 4, 'sf2'),
+(5, 5, 'sf3'),
+(6, 3, 'sf4'),
+(7, 4, 'sf5'),
+(8, 5, 'sf6'),
+(9, 6, 'sdfg');
 
 -- --------------------------------------------------------
 
@@ -842,11 +914,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `mobile`, `name`, `m_vfd`, `e_vfd`, `status`) VALUES
-(1, 'ayondip2001@gmail.com', '$2y$10$GfITKldity2Pm1K8oTe5Z.vQYinJbahP9dUKEjOcN2AT9DWEAT.py', '7407287858', 'Ayondip Jana', 1, 1, 1),
-(4, 'vs@gmail.com', '$2y$10$VEMh8NhyfaF4GAC8to6gveY0zN0JV262h59.Xfh8cyORPZl6XHDc6', '1234567890', 'VS', 0, 1, 1),
-(5, 'vaishnavisatone1107@gmail.com', '$2y$10$sgRQc3g0QA/0tihXOZLq0et/ei45JEeNRJPTuHcRa/cl3Hh1U/iBe', '1234567890', 'Vaishnavi', 1, 1, 1),
-(6, 'anushree@gmail.com', '$2y$10$jlwaIZjx0AKXzA3GBT4U6.ec7tCnoIIZc2p61k/cKN2x.Etnc/z6K', '8965321475', 'Anushree', 1, 1, 1),
-(7, 'cse19101@gmail.com', '$2y$10$PKWqIq/LXfaocmcqvWYbFOt6Vd6C2GlL/D7sMwdYog03ST/whpoVK', '1234567889', 'Ayondip Jana', 1, 1, 1);
+(1, 'ayondip2001@gmail.com', '$2y$10$GfITKldity2Pm1K8oTe5Z.vQYinJbahP9dUKEjOcN2AT9DWEAT.py', '7407287858', 'Ayondip Jana', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -871,14 +939,7 @@ CREATE TABLE `user_address` (
 --
 
 INSERT INTO `user_address` (`id`, `uid`, `type_ad`, `user_name`, `user_mobile`, `user_city`, `user_add`, `user_pin`, `user_local`) VALUES
-(4, 1, 'Home', 'Ayondip Jana', '4178589658', 3, 'wert frt fy5 tyty 6fgty', '721122', 'India'),
-(8, 4, 'Home', 'VS', '2134567890', 10, 'Wardha', '442001', 'Wardha'),
-(9, 4, 'on', 'Vaishnavi', '9865321475', 11, 'Nagpur', '896532', 'lk'),
-(10, 5, 'Home', 'Vaishnavi', '9632587410', 11, 'Manish Nagar Nagpur', '440001', 'Nagpur'),
-(11, 6, 'Home', 'Anushree', '8965321475', 10, 'Sudampuri Wardha', '442001', 'Wardha'),
-(12, 6, 'Home', 'Anshree', '896532147', 3, 'Kolkata', '896523', 'kolkata'),
-(13, 7, 'Home', 'Ayondip Jana', '9635044989', 10, 'bn', '721122', 'India'),
-(14, 7, 'Home', 'Ayondip Jana', '8635045491', 10, 'ss', '560043', 'India');
+(4, 1, 'Home', 'Ayondip Jana', '4178589658', 3, 'wert frt fy5 tyty 6fgty', '721122', 'India');
 
 -- --------------------------------------------------------
 
@@ -898,11 +959,7 @@ CREATE TABLE `user_wallet` (
 
 INSERT INTO `user_wallet` (`id`, `user_id`, `ballance`) VALUES
 (1, 1, 39.66),
-(2, 3, 0),
-(3, 4, 0),
-(4, 5, 0),
-(5, 6, 0),
-(6, 7, 0);
+(2, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -935,11 +992,7 @@ INSERT INTO `user_w_msg` (`id`, `u_id`, `cod`, `msg`, `balance`, `added_on`, `is
 (12, 1, 1, 'get form purchase', 37.88, '2021-09-26 18:25:37', 1),
 (13, 1, 0, 'Used in purchase', 37.88, '2021-09-26 18:33:01', 1),
 (14, 1, 1, 'get form purchase', 37.88, '2021-09-26 18:33:12', 1),
-(15, 3, 1, 'Wallet created', 0, '2021-09-26 19:19:04', 1),
-(16, 4, 1, 'Wallet created', 0, '2021-12-31 19:00:31', 1),
-(17, 5, 1, 'Wallet created', 0, '2022-01-01 14:28:22', 1),
-(18, 6, 1, 'Wallet created', 0, '2022-01-02 06:49:34', 1),
-(19, 7, 1, 'Wallet created', 0, '2022-01-03 13:07:17', 1);
+(15, 3, 1, 'Wallet created', 0, '2021-09-26 19:19:04', 1);
 
 -- --------------------------------------------------------
 
@@ -953,14 +1006,19 @@ CREATE TABLE `wishlist` (
   `p_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `wishlist`
+-- Table structure for table `witdraw_req`
 --
 
-INSERT INTO `wishlist` (`id`, `u_id`, `p_id`) VALUES
-(9, 5, 1),
-(10, 5, 3),
-(11, 4, 14);
+CREATE TABLE `witdraw_req` (
+  `id` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL,
+  `amount_w` float NOT NULL,
+  `amount_r` float NOT NULL,
+  `isnew` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -1039,9 +1097,27 @@ ALTER TABLE `dc`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `delivery_boy`
+--
+ALTER TABLE `delivery_boy`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dv_time`
 --
 ALTER TABLE `dv_time`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `filter`
+--
+ALTER TABLE `filter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `isue`
+--
+ALTER TABLE `isue`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1105,6 +1181,12 @@ ALTER TABLE `promo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `p_filter`
+--
+ALTER TABLE `p_filter`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `p_reject`
 --
 ALTER TABLE `p_reject`
@@ -1153,6 +1235,12 @@ ALTER TABLE `subcategories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sub_filter`
+--
+ALTER TABLE `sub_filter`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -1183,6 +1271,12 @@ ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `witdraw_req`
+--
+ALTER TABLE `witdraw_req`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1202,31 +1296,31 @@ ALTER TABLE `assigned_orders`
 -- AUTO_INCREMENT for table `business_type`
 --
 ALTER TABLE `business_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cart_detail`
 --
 ALTER TABLE `cart_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cnfrm_delivery`
@@ -1244,7 +1338,7 @@ ALTER TABLE `cnfrm_undelivery`
 -- AUTO_INCREMENT for table `commission`
 --
 ALTER TABLE `commission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `country`
@@ -1259,10 +1353,28 @@ ALTER TABLE `dc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `delivery_boy`
+--
+ALTER TABLE `delivery_boy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `dv_time`
 --
 ALTER TABLE `dv_time`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `filter`
+--
+ALTER TABLE `filter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `isue`
+--
+ALTER TABLE `isue`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ofd`
@@ -1274,13 +1386,13 @@ ALTER TABLE `ofd`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `order_status`
@@ -1304,25 +1416,31 @@ ALTER TABLE `order_time`
 -- AUTO_INCREMENT for table `pin`
 --
 ALTER TABLE `pin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product_ad_on`
 --
 ALTER TABLE `product_ad_on`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `promo`
 --
 ALTER TABLE `promo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `p_filter`
+--
+ALTER TABLE `p_filter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `p_reject`
@@ -1334,7 +1452,7 @@ ALTER TABLE `p_reject`
 -- AUTO_INCREMENT for table `p_sfilter`
 --
 ALTER TABLE `p_sfilter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `rejection`
@@ -1346,13 +1464,13 @@ ALTER TABLE `rejection`
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `seller_wallet`
 --
 ALTER TABLE `seller_wallet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `seller_w_msg`
@@ -1364,43 +1482,55 @@ ALTER TABLE `seller_w_msg`
 -- AUTO_INCREMENT for table `state`
 --
 ALTER TABLE `state`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `sub_filter`
+--
+ALTER TABLE `sub_filter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_address`
 --
 ALTER TABLE `user_address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_wallet`
 --
 ALTER TABLE `user_wallet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_w_msg`
 --
 ALTER TABLE `user_w_msg`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `witdraw_req`
+--
+ALTER TABLE `witdraw_req`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
