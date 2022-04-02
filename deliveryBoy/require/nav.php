@@ -81,6 +81,6 @@
           </ul>
         </div>
         <div class="copyright">
-          <p>Developed by Ask in city, Copyright@2021, All rights reserverd</p>
+          <p>Developed by Ayondip Jana</p>
         </div>
       </div>
