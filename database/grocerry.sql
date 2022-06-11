@@ -793,7 +793,8 @@ CREATE TABLE `seller_w_msg` (
   `cod` tinyint(1) NOT NULL,
   `msg` text NOT NULL,
   `balance` float NOT NULL,
-  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `is_new` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
