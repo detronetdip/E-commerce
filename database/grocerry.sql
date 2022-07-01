@@ -120,7 +120,7 @@ CREATE TABLE `city` (
   `city_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+-- ---------------------------------------------------------
 
 --
 -- Table structure for table `cnfrm_delivery`
