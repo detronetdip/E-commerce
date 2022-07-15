@@ -18,6 +18,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="floatwrap" id="floatwrap">
       <div class="cataddbox" id="cataddbox"></div>
@@ -403,185 +404,94 @@
             Logout
           </button>
         </header>
-        
-        <div class="wrwr">
-          <div class="path">
-            <a href=""
-              ><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a
-            >
-            <span>/</span>
-          </div>
+<div class="wrwr">
+    <div class="path" id="path">
+        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+        <span>/</span>
+        <a href="sellerapprove.html">Approve Sellers </a><span>/</span>
+        <a href="view_seller_approve.html">View</a>
+    </div>
+    <div class="headrow">
+        <div class="wrap" style="height: 30rem;">
+            <div class="pp">
+                <img src="assets/images/2.jpg" alt="" />
+            </div>
+            <div class="detail">
+                <h3>ytrew</h3>
+                <h2>nbvc bvcx</h2>
+                <h4>tre@gmail.com</h4>
+                <h4>674747476767u86</h4>
+                <p>
+                    kn mtbn bnkt 
+                </p>
+                <br><br><br><br>
+                <h2>Business address</h2>
+                <br>
+                <p>
+                    mnbvt, ytr, ytr,
+                    65432
+                </p>
+            </div>
+            <div class="detail">
+                <h3>Bank Details</h3>
+                <h4>765432</h4>
+                <h4>ytr</h4>
+                <p> jhgfd</p>
+                <h4>ken2346</h4>
+            </div>
+            <div class="detail" style="float: right">
+                <h4>GST Number: <span style="color:#6a7187;">6543gfds</span></h4>
+                <a href="" target="_blank">
+                    <button class="upw" style="width:14rem;">
+                        View Certificate
+                    </button>
+                </a>
+                <a href="" target="_blank">
+                    <button class="upw" style="width:14rem;">
+                        View GST Proof
+                    </button>
+                </a>
+                <br>
+                <a href="" target="_blank">
+                    <button class="upw" style="width:14rem;">
+                        View Adhar
+                    </button>
+                </a>
+                <br>
+                <a href="" target="_blank">
+                    <button class="upw" style="width:14rem;">
+                        View PAN
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
 
-          <div class="row">
-            <div
-              class="card"
-              style="border: 1px solid #e1e4e8; border-radius: 0 5px 5px 0"
-            >
-              <div class="logo">
-                <i class="fa fa-list" aria-hidden="true"></i>
-              </div>
-              <div class="rest">
-                <h4>Total Categories</h4>
-                <h3>0</h3>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="border: 1px solid #e1e4e8; border-radius: 0 5px 5px 0"
-            >
-              <div class="logo">
-                <i class="fa fa-briefcase" aria-hidden="true"></i>
-              </div>
-              <div class="rest">
-                <h4>Total Products</h4>
-                <h3>0</h3>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="border: 1px solid #e1e4e8; border-radius: 0 5px 5px 0"
-            >
-              <div class="logo">
-                <i class="fa fa-users" aria-hidden="true"></i>
-              </div>
-              <div class="rest">
-                <h4>Total Sellers</h4>
-                <h3>0</h3>
-              </div>
-            </div>
-            <div
-              class="card"
-              style="border: 1px solid #e1e4e8; border-radius: 0 5px 5px 0"
-            >
-              <div class="logo">
-                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-              </div>
-              <div class="rest">
-                <h4>Total Orders</h4>
-                <h3>0</h3>
-              </div>
-            </div>
-          </div>
-          <div class="rowbtn">
-            <div
-              class="b"
-              style="display: flex; flex-direction: column; padding: 3rem 2rem"
-              id="cpl"
-            >
-              <h2>Current Minimum Order Amount Without Delivery Charge: 0</h2>
-              <input
-                value="0"
-                type="text"
-                placeholder="Enter minimum amount for delivery charge"
-                id="sfield"
-                style="width: 98.5%; margin: 1rem 0"
-              />
-              <h2>Delivery Charge: 0</h2>
-              <input
-                value="0"
-                type="text"
-                placeholder="Enter minimum amount for delivery charge"
-                id="sfield2"
-                style="width: 98.5%; margin: 1rem 0"
-              />
-              <button class="add" onclick="dv_charge()">
-                <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Update
-              </button>
-              <span
-                style="font-size: 1.2rem; margin-top: 0.8rem"
-                id="erm"
-              ></span>
-            </div>
-          </div>
-          <div class="row2">
-            <div class="chart">
-              <div class="row">
-                <h4>All Sales</h4>
-              </div>
-              <div class="sd" id="chart_div"></div>
-            </div>
-            <div class="right">
-              <div class="row">
-                <h4>All Orders</h4>
-              </div>
-              <div class="sd" id="piechart"></div>
-            </div>
-          </div>
-          <div
-            class="row"
-            style="
+    <textarea name="" id="rejection" style="width:99%;resize:none;padding:1.5rem;outline:none;" rows="8"
+        placeholder="In case of rejection plese specify the reason"></textarea>
+    <div class="row_a">
+        <button class="upw" style="width:14rem;" >
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+            Approve
+        </button>
+        <button class="upw" style="width:14rem;" >
+            <i class="fa fa-times" aria-hidden="true"></i>
+            Reject
+        </button>
+    </div>
+
+    <div class="row" style="
               display: block;
               margin-bottom: 2rem;
               font-size: 1.2rem;
               color: #6a7187;
-            "
-          >
-            @ Developed by Ayondip Jana
-          </div>
-        </div>
-        <script type="text/javascript">
-          google.charts.load("current", {
-            packages: ["corechart"],
-          });
-          google.charts.setOnLoadCallback(drawChart);
-          google.charts.setOnLoadCallback(drawChartV);
-          let y = 20;
-
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ["Task", "Hours per Day"],
-              ["Total Orders", 20],
-              ["Pending", 20],
-              ["Confirm", 20],
-              ["Intransit", y],
-              ["Delivered", 20],
-            ]);
-
-            var options = {
-              title: "Orders Chart",
-              is3D: true,
-            };
-
-            var chart = new google.visualization.PieChart(
-              document.getElementById("piechart")
-            );
-
-            chart.draw(data, options);
-          }
-
-          function drawChartV() {
-            var data = google.visualization.arrayToDataTable([
-              ["Year", "Sales", ""],
-              ["12", 1000, 0],
-              ["2014", 1170, 0],
-              ["2015", 660, 0],
-              ["2016", 1030, 0],
-            ]);
-
-            var options = {
-              title: "All Sales",
-              hAxis: {
-                title: "Day",
-                titleTextStyle: {
-                  color: "#333",
-                },
-              },
-              vAxis: {
-                title: "Product",
-                minValue: 0,
-              },
-            };
-
-            var chart = new google.visualization.AreaChart(
-              document.getElementById("chart_div")
-            );
-            chart.draw(data, options);
-          }
-        </script>
-        
-      </div>
+            ">
+        @ Developed by Ayondip Jana
     </div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+</div>
+</div>
+</div>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
 </html>
