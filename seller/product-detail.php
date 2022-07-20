@@ -1,13 +1,13 @@
 <?php
- require('require/top.php');
- authorise($con);
- if(!isset($_GET['d'])){
-     redirect('index.php');
-     die();
- }
- $id=$_GET['d'];
- $product_id=$_GET['d'];
- $product=product_detail($con,$product_id);
+require('require/top.php');
+authorise($con);
+if (!isset($_GET['d'])) {
+    redirect('index.php');
+    die();
+}
+$id = $_GET['d'];
+$product_id = $_GET['d'];
+$product = product_detail($con, $product_id);
 ?>
 <div class="path">
     <div class="container">
@@ -30,20 +30,16 @@
                             </div>
                             <div class="subimages flex">
                                 <div class="sub">
-                                    <img src="../media/product/<?php echo $product['img1']; ?>" alt="sub-images"
-                                        onclick="view(this)" />
+                                    <img src="../media/product/<?php echo $product['img1']; ?>" alt="sub-images" onclick="view(this)" />
                                 </div>
                                 <div class="sub">
-                                    <img src="../media/product/<?php echo $product['img2']; ?>" alt="sub-images"
-                                        onclick="view(this)" />
+                                    <img src="../media/product/<?php echo $product['img2']; ?>" alt="sub-images" onclick="view(this)" />
                                 </div>
                                 <div class="sub">
-                                    <img src="../media/product/<?php echo $product['img3']; ?>" alt="sub-images"
-                                        onclick="view(this)" />
+                                    <img src="../media/product/<?php echo $product['img3']; ?>" alt="sub-images" onclick="view(this)" />
                                 </div>
                                 <div class="sub">
-                                    <img src="../media/product/<?php echo $product['img4']; ?>" alt="sub-images"
-                                        onclick="view(this)" />
+                                    <img src="../media/product/<?php echo $product['img4']; ?>" alt="sub-images" onclick="view(this)" />
                                 </div>
                             </div>
                         </div>
@@ -78,25 +74,24 @@
                                 </ul>
                                 <ul class="ordr-crt-share">
                                     <li>
-                                        <a href="add_product.php?b=2846&idp=<?php echo $_GET['d'];  ?>"><button
-                                                class="order-btn hover-btn">
+                                        <a href="add_product.php?b=2846&idp=<?php echo $_GET['d'];  ?>"><button class="order-btn hover-btn">
                                                 <i class="uil uil-pen"></i> Edit</button></a>
                                     </li>
                                 </ul>
                             </div>
                             <?php
-                                if($product['isappp']==2){
-                                    $query="select * from p_reject where product_id='$id'";
-                                    $res=mysqli_query($con,$query);
-                                    $row=mysqli_fetch_assoc($res);
+                            if ($product['isappp'] == 2) {
+                                $query = "select * from p_reject where product_id='$id'";
+                                $res = mysqli_query($con, $query);
+                                $row = mysqli_fetch_assoc($res);
                             ?>
-                            <div class="product-group-dt mt3" style="background:none">
-                                <div class="reject-badge-red">
-                                    This Product Has Been Rejected. <br>Remarks: <?php echo $row['cause']; ?>
+                                <div class="product-group-dt mt3" style="background:none">
+                                    <div class="reject-badge-red">
+                                        This Product Has Been Rejected. <br>Remarks: <?php echo $row['cause']; ?>
+                                    </div>
                                 </div>
-                            </div>
                             <?php
-                                }
+                            }
                             ?>
                         </div>
                     </div>
@@ -124,21 +119,21 @@
                                             <div class="pdct-dt-step">
                                                 <h4>Seller</h4>
                                                 <div class="product_attr">
-                                                    <?php 
-                                $t=$product['added_by'];
-                                $ti=$product['id'];
-                                $h=mysqli_fetch_assoc(mysqli_query($con,"select b_name from sellers where id='$t'"));
-                                $hi=mysqli_fetch_assoc(mysqli_query($con,"select added_on from product_ad_on where pid='$ti'"));
-                                echo $h['b_name']; ?>
+                                                    <?php
+                                                    $t = $product['added_by'];
+                                                    $ti = $product['id'];
+                                                    $h = mysqli_fetch_assoc(mysqli_query($con, "select b_name from sellers where id='$t'"));
+                                                    $hi = mysqli_fetch_assoc(mysqli_query($con, "select added_on from product_ad_on where pid='$ti'"));
+                                                    echo $h['b_name']; ?>
                                                 </div>
                                             </div>
                                             <div class="pdct-dt-step">
                                                 <h4>Added On</h4>
                                                 <div class="product_attr">
-                                                    <?php 
-                                $ti=$product['id'];
-                                $hi=mysqli_fetch_assoc(mysqli_query($con,"select added_on from product_ad_on where pid='$ti'"));
-                                echo $hi['added_on']; ?>
+                                                    <?php
+                                                    $ti = $product['id'];
+                                                    $hi = mysqli_fetch_assoc(mysqli_query($con, "select added_on from product_ad_on where pid='$ti'"));
+                                                    echo $hi['added_on']; ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,5 +148,5 @@
     </div>
 </div>
 <?php
-    require("require/foot.php");
+require("require/foot.php");
 ?>

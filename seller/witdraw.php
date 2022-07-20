@@ -1,7 +1,7 @@
 <?php
-    require("require/top.php");
-    authorise($con);
-    $sid=$_SESSION['SELLER_ID'];
+require("require/top.php");
+authorise($con);
+$sid = $_SESSION['SELLER_ID'];
 ?>
 <div class="path">
     <div class="container">
@@ -22,33 +22,33 @@
         <div class="maincontainer2">
 
             <form action="#">
-                <?php 
-                    $y=mysqli_num_rows(mysqli_query($con,"select * from witdraw_req where s_id='$sid'"));
-                       if($y>0){
+                <?php
+                $y = mysqli_num_rows(mysqli_query($con, "select * from witdraw_req where s_id='$sid'"));
+                if ($y > 0) {
 
-                    ?>
-                <div class="formrow">
-                    <div class="heading" style="width:100%;">You already have an active witdraw request.</div>
-                </div>
+                ?>
+                    <div class="formrow">
+                        <div class="heading" style="width:100%;">You already have an active witdraw request.</div>
+                    </div>
                 <?php
-                       }else{
-                    ?>
-                <div class="formrow">
-                    <div class="heading">Ammount</div>
-                    <input type="number" placeholder="Enter Ammount" id="seller_full_name">
-                </div>
-                <div class="formrow">
-                    <a href="javascript:void(0)" class="btn d-flex-center-a-j bg-main br-15" onclick="withdraw()">
-                        <span>Witdraw</span>
-                    </a>
-                </div>
+                } else {
+                ?>
+                    <div class="formrow">
+                        <div class="heading">Ammount</div>
+                        <input type="number" placeholder="Enter Ammount" id="seller_full_name">
+                    </div>
+                    <div class="formrow">
+                        <a href="javascript:void(0)" class="btn d-flex-center-a-j bg-main br-15" onclick="withdraw()">
+                            <span>Witdraw</span>
+                        </a>
+                    </div>
                 <?php
-                       }
-                    ?>
+                }
+                ?>
             </form>
         </div>
     </div>
 </div>
 <?php
-    require("require/foot.php");
+require("require/foot.php");
 ?>

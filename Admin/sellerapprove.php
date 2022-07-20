@@ -1,14 +1,14 @@
 <?php
- require('require/top.php');
- $z=0;
- $o=1;
- $q="select * from sellers where isapp='$z' and is_cp='$o'";
- $r=mysqli_query($con,$q);
- while($g=mysqli_fetch_assoc($r)){
-    $ids=$g['id'];
-   mysqli_query($con,"update sellers set is_new='0' where id='$ids'");
+require('require/top.php');
+$z = 0;
+$o = 1;
+$q = "select * from sellers where isapp='$z' and is_cp='$o'";
+$r = mysqli_query($con, $q);
+while ($g = mysqli_fetch_assoc($r)) {
+    $ids = $g['id'];
+    mysqli_query($con, "update sellers set is_new='0' where id='$ids'");
 }
- ?>
+?>
 
 <div class="wrwr">
     <div class="path" id="path">
@@ -31,26 +31,26 @@
                 <div class="p_action">Action</div>
             </div>
             <div class="bspace">
-                <?php 
- $i=1;
- $q="select * from sellers where isapp='$z' and is_cp='$o'";
- $r=mysqli_query($con,$q);
- while($row=mysqli_fetch_assoc($r)){ ?>
-                <div class="p_row">
-                    <div class="slno"><?php echo $i; ?></div>
-                    <div class="p_name"><?php echo $row['f_name']; ?></div>
-                    <div class="p_image"><?php echo $row['email']; ?></div>
-                    <div class="p_status">
-                        <span class="active_span" style="color: red">Pending</span>
+                <?php
+                $i = 1;
+                $q = "select * from sellers where isapp='$z' and is_cp='$o'";
+                $r = mysqli_query($con, $q);
+                while ($row = mysqli_fetch_assoc($r)) { ?>
+                    <div class="p_row">
+                        <div class="slno"><?php echo $i; ?></div>
+                        <div class="p_name"><?php echo $row['f_name']; ?></div>
+                        <div class="p_image"><?php echo $row['email']; ?></div>
+                        <div class="p_status">
+                            <span class="active_span" style="color: red">Pending</span>
+                        </div>
+                        <div class="p_action">
+                            <button class="edit" onclick="redirect_to('view_seller_approve.php?sid=<?php echo $row['id']; ?>')">
+                                <i class="fa fa-wifi" aria-hidden="true"></i>View
+                            </button>
+                        </div>
                     </div>
-                    <div class="p_action">
-                        <button class="edit"
-                            onclick="redirect_to('view_seller_approve.php?sid=<?php echo $row['id']; ?>')">
-                            <i class="fa fa-wifi" aria-hidden="true"></i>View
-                        </button>
-                    </div>
-                </div>
-                <?php $i++; } ?>
+                <?php $i++;
+                } ?>
             </div>
         </div>
     </div>
@@ -64,5 +64,5 @@
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>

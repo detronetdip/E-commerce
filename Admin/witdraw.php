@@ -1,13 +1,13 @@
 <?php
- require('require/top.php');
- $query="select witdraw_req.*,sellers.f_name from witdraw_req,sellers where sellers.id=witdraw_req.s_id";
- $res=mysqli_query($con,$query);
- $h=mysqli_query($con,"select * from witdraw_req where isnew='1'");
- while($w=mysqli_fetch_assoc($h)){
-   $jid=$w['id'];
-   mysqli_query($con,"update witdraw_req set isnew='0' where id='$jid'");
- }
- ?>
+require('require/top.php');
+$query = "select witdraw_req.*,sellers.f_name from witdraw_req,sellers where sellers.id=witdraw_req.s_id";
+$res = mysqli_query($con, $query);
+$h = mysqli_query($con, "select * from witdraw_req where isnew='1'");
+while ($w = mysqli_fetch_assoc($h)) {
+    $jid = $w['id'];
+    mysqli_query($con, "update witdraw_req set isnew='0' where id='$jid'");
+}
+?>
 <div class="wrwr">
     <div class="path" id="path">
         <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -30,23 +30,22 @@
             </div>
             <div class="bspace">
                 <?php
-$i=1;
- while($row=mysqli_fetch_assoc($res)){
-?>
-                <div class="p_row" style="height: 3rem;">
-                    <div class="slno"><?php echo $i; ?></div>
-                    <div class="p_name"><?php echo $row['f_name']; ?></div>
-                    <div class="p_status">
-                        &#8377; <?php echo $row['amount_w']; ?>
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($res)) {
+                ?>
+                    <div class="p_row" style="height: 3rem;">
+                        <div class="slno"><?php echo $i; ?></div>
+                        <div class="p_name"><?php echo $row['f_name']; ?></div>
+                        <div class="p_status">
+                            &#8377; <?php echo $row['amount_w']; ?>
+                        </div>
+                        <div class="date">&#8377; <?php echo $row['amount_r']; ?></div>
+                        <div class="p_action" style="width: 7rem">
+                            <button class="edit" onclick="redirect_to('seller_detail.php?sid=<?php echo $row['s_id']; ?>&req=1')">
+                                <i class="fa fa-wifi" aria-hidden="true"></i>View
+                            </button>
+                        </div>
                     </div>
-                    <div class="date">&#8377; <?php echo $row['amount_r']; ?></div>
-                    <div class="p_action" style="width: 7rem">
-                        <button class="edit"
-                            onclick="redirect_to('seller_detail.php?sid=<?php echo $row['s_id']; ?>&req=1')">
-                            <i class="fa fa-wifi" aria-hidden="true"></i>View
-                        </button>
-                    </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
@@ -61,5 +60,5 @@ $i=1;
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>
