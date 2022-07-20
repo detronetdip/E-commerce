@@ -1,11 +1,11 @@
 <?php
- require('require/top.php');
- $id=$_GET['sid'];
- $q="select sellers.*,country.cntry_name,state.state_name,city.city_name,pin.pincode,business_type.type from sellers,country,state,city,pin,business_type where sellers.id='$id' and sellers.country=country.id and sellers.state=state.id and sellers.city=city.id and sellers.pin=pin.id and sellers.tob=business_type.id";
- $r=mysqli_query($con,$q);
- $row=mysqli_fetch_assoc($r);
- $is_gst=$row['is_gst'];
- ?>
+require('require/top.php');
+$id = $_GET['sid'];
+$q = "select sellers.*,country.cntry_name,state.state_name,city.city_name,pin.pincode,business_type.type from sellers,country,state,city,pin,business_type where sellers.id='$id' and sellers.country=country.id and sellers.state=state.id and sellers.city=city.id and sellers.pin=pin.id and sellers.tob=business_type.id";
+$r = mysqli_query($con, $q);
+$row = mysqli_fetch_assoc($r);
+$is_gst = $row['is_gst'];
+?>
 <div class="wrwr">
     <div class="path" id="path">
         <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -48,12 +48,12 @@
                         View Certificate
                     </button>
                 </a>
-                <?php if($is_gst==1){  ?>
-                <a href="../media/seller_profile/<?php echo $row['gst_crft']; ?>" target="_blank">
-                    <button class="upw" style="width:14rem;">
-                        View GST Proof
-                    </button>
-                </a>
+                <?php if ($is_gst == 1) {  ?>
+                    <a href="../media/seller_profile/<?php echo $row['gst_crft']; ?>" target="_blank">
+                        <button class="upw" style="width:14rem;">
+                            View GST Proof
+                        </button>
+                    </a>
                 <?php } ?>
                 <br>
                 <a href="../media/seller_profile/<?php echo $row['adhar']; ?>" target="_blank">
@@ -71,8 +71,7 @@
         </div>
     </div>
 
-    <textarea name="" id="rejection" style="width:99%;resize:none;padding:1.5rem;outline:none;" rows="8"
-        placeholder="In case of rejection plese specify the reason"></textarea>
+    <textarea name="" id="rejection" style="width:99%;resize:none;padding:1.5rem;outline:none;" rows="8" placeholder="In case of rejection plese specify the reason"></textarea>
     <div class="row_a">
         <button class="upw" style="width:14rem;" onclick="approve_seller('<?php echo $row['id'] ?>')">
             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
@@ -94,5 +93,5 @@
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>

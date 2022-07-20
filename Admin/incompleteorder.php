@@ -1,6 +1,6 @@
 <?php
- require('require/top.php');
- ?>
+require('require/top.php');
+?>
 <div class="wrwr">
     <div class="path" id="path">
         <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -22,24 +22,25 @@
             </div>
             <div class="bspace">
                 <?php
-    $query="select orders.id,orders.o_id,order_status.o_status from orders,order_status where orders.order_status='1' and orders.order_status=order_status.id order by orders.id desc";
-    $res=mysqli_query($con,$query);
-    $i=1;
-    while($row=mysqli_fetch_assoc($res)){
+                $query = "select orders.id,orders.o_id,order_status.o_status from orders,order_status where orders.order_status='1' and orders.order_status=order_status.id order by orders.id desc";
+                $res = mysqli_query($con, $query);
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($res)) {
 
-?>
-                <div class="p_row">
-                    <div class="slno"><?php  echo $i; $i++; ?></div>
-                    <div class="p_name"><?php  echo $row['o_id']; ?></div>
-                    <div class="p_status">
-                        <span class="active_span"><?php  echo $row['o_status']; ?></span>
+                ?>
+                    <div class="p_row">
+                        <div class="slno"><?php echo $i;
+                                            $i++; ?></div>
+                        <div class="p_name"><?php echo $row['o_id']; ?></div>
+                        <div class="p_status">
+                            <span class="active_span"><?php echo $row['o_status']; ?></span>
+                        </div>
+                        <div class="p_action" style="width: 7rem">
+                            <button class="edit" onclick="delete_order('<?php echo $row['o_id']; ?>')">
+                                <i class="fa fa-trash" aria-hidden="true"></i>Delete
+                            </button>
+                        </div>
                     </div>
-                    <div class="p_action" style="width: 7rem">
-                        <button class="edit" onclick="delete_order('<?php echo $row['o_id']; ?>')">
-                            <i class="fa fa-trash" aria-hidden="true"></i>Delete
-                        </button>
-                    </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
@@ -54,5 +55,5 @@
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>

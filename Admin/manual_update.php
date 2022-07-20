@@ -1,7 +1,7 @@
 <?php
 require('require/top.php');
-$id=$_GET['sid'];
-$o=mysqli_fetch_assoc(mysqli_query($con,"select * from seller_wallet where seller_id='$id'"));
+$id = $_GET['sid'];
+$o = mysqli_fetch_assoc(mysqli_query($con, "select * from seller_wallet where seller_id='$id'"));
 ?>
 <div class="wrwr">
     <div class="path" id="path">
@@ -11,7 +11,7 @@ $o=mysqli_fetch_assoc(mysqli_query($con,"select * from seller_wallet where selle
     </div>
     <div class="catbox-row">
         <div class="catboxp">
-            <h1><?php echo "Manual Update";?> </h1>
+            <h1><?php echo "Manual Update"; ?> </h1>
             <div class="formrow">
                 <div class="heading">
                     Wallet Amount
@@ -37,7 +37,7 @@ $o=mysqli_fetch_assoc(mysqli_query($con,"select * from seller_wallet where selle
                     Amount
                 </div>
                 <div class="catselect">
-                    <input type="number" placeholder="Enter amount" id="abal" >
+                    <input type="number" placeholder="Enter amount" id="abal">
                 </div>
             </div>
             <div class="formrow">

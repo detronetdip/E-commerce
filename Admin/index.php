@@ -1,7 +1,7 @@
 <?php
- require('require/top.php');
-    
- ?>
+require('require/top.php');
+
+?>
 <div class="wrwr">
     <div class="path">
         <a href=""><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -49,14 +49,12 @@
     <div class="rowbtn">
         <div class="b" style="display:flex;flex-direction:column;padding:3rem 2rem" id="cpl">
             <?php
-            $t=mysqli_fetch_assoc(mysqli_query($con,"select * from dc where id='1'"));
-        ?>
+            $t = mysqli_fetch_assoc(mysqli_query($con, "select * from dc where id='1'"));
+            ?>
             <h2>Current Minimum Order Amount Without Delivery Charge: <?php echo $t['dc']; ?></h2>
-            <input value="<?php echo $t['dc']; ?>" type="text" placeholder="Enter minimum amount for delivery charge"
-                id="sfield" style="width:98.5%;margin:1rem 0;" />
+            <input value="<?php echo $t['dc']; ?>" type="text" placeholder="Enter minimum amount for delivery charge" id="sfield" style="width:98.5%;margin:1rem 0;" />
             <h2>Delivery Charge: <?php echo $t['pc']; ?></h2>
-            <input value="<?php echo $t['pc']; ?>" type="text" placeholder="Enter minimum amount for delivery charge"
-                id="sfield2" style="width:98.5%;margin:1rem 0;" />
+            <input value="<?php echo $t['pc']; ?>" type="text" placeholder="Enter minimum amount for delivery charge" id="sfield2" style="width:98.5%;margin:1rem 0;" />
             <button class="add" onclick="dv_charge()">
                 <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Update
             </button>
@@ -87,64 +85,64 @@
     </div>
 </div>
 <script type="text/javascript">
-google.charts.load("current", {
-    packages: ["corechart"]
-});
-google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawChartV);
-let y = 20;
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChartV);
+    let y = 20;
 
-function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-        ["Task", "Hours per Day"],
-        ["Total Orders", 20],
-        ["Pending", 20],
-        ["Confirm", 20],
-        ["Intransit", y],
-        ["Delivered", 20],
-    ]);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Task", "Hours per Day"],
+            ["Total Orders", 20],
+            ["Pending", 20],
+            ["Confirm", 20],
+            ["Intransit", y],
+            ["Delivered", 20],
+        ]);
 
-    var options = {
-        title: "Orders Chart",
-        is3D: true,
-    };
+        var options = {
+            title: "Orders Chart",
+            is3D: true,
+        };
 
-    var chart = new google.visualization.PieChart(
-        document.getElementById("piechart")
-    );
+        var chart = new google.visualization.PieChart(
+            document.getElementById("piechart")
+        );
 
-    chart.draw(data, options);
-}
+        chart.draw(data, options);
+    }
 
-function drawChartV() {
-    var data = google.visualization.arrayToDataTable([
-        ["Year", "Sales", ""],
-        ["12", 1000, 0],
-        ["2014", 1170, 0],
-        ["2015", 660, 0],
-        ["2016", 1030, 0],
-    ]);
+    function drawChartV() {
+        var data = google.visualization.arrayToDataTable([
+            ["Year", "Sales", ""],
+            ["12", 1000, 0],
+            ["2014", 1170, 0],
+            ["2015", 660, 0],
+            ["2016", 1030, 0],
+        ]);
 
-    var options = {
-        title: "All Sales",
-        hAxis: {
-            title: "Day",
-            titleTextStyle: {
-                color: "#333"
-            }
-        },
-        vAxis: {
-            title: "Product",
-            minValue: 0
-        },
-    };
+        var options = {
+            title: "All Sales",
+            hAxis: {
+                title: "Day",
+                titleTextStyle: {
+                    color: "#333"
+                }
+            },
+            vAxis: {
+                title: "Product",
+                minValue: 0
+            },
+        };
 
-    var chart = new google.visualization.AreaChart(
-        document.getElementById("chart_div")
-    );
-    chart.draw(data, options);
-}
+        var chart = new google.visualization.AreaChart(
+            document.getElementById("chart_div")
+        );
+        chart.draw(data, options);
+    }
 </script>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>

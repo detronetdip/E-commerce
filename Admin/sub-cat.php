@@ -1,6 +1,6 @@
 <?php
- require('require/top.php');
- ?>
+require('require/top.php');
+?>
 <div class="wrwr">
     <div class="path">
         <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -30,39 +30,39 @@
             </div>
             <div class="bspace" id="subcatrows">
                 <?php
-            $query="select * from subcategories order by id desc";
-            
-            $res=mysqli_query($con,$query);
-            $i=1;
-            $template='';
-            while($row=mysqli_fetch_assoc($res)){
-            $st='';
-            $cb='';
-            $idd=$row['id'];
-            $scat=$row['id'];
-            $query2="select * from commission where scat_id='$scat'";
-            $res2=mysqli_query($con,$query2);
-            $rowt=mysqli_fetch_assoc($res2);
-            $cmsn=$rowt['com'];
-            if($row['status']==1){
-                $st="Active";
-                  $cb="<button class='deactive' onclick='subcat_acdc($idd, 0)'>
+                $query = "select * from subcategories order by id desc";
+
+                $res = mysqli_query($con, $query);
+                $i = 1;
+                $template = '';
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $st = '';
+                    $cb = '';
+                    $idd = $row['id'];
+                    $scat = $row['id'];
+                    $query2 = "select * from commission where scat_id='$scat'";
+                    $res2 = mysqli_query($con, $query2);
+                    $rowt = mysqli_fetch_assoc($res2);
+                    $cmsn = $rowt['com'];
+                    if ($row['status'] == 1) {
+                        $st = "Active";
+                        $cb = "<button class='deactive' onclick='subcat_acdc($idd, 0)'>
                   <i class='fa fa-eye-slash' aria-hidden='true'></i>Deactive
                 </button>";
-                }else{
-                $st="Deactive";
-                $cb="
+                    } else {
+                        $st = "Deactive";
+                        $cb = "
                 <button class='active' onclick='subcat_acdc($idd, 1)'>
                 <i class='fa fa-eye' aria-hidden='true'></i>Active
                 </button>
                 ";
-                }
-                $id=$row['id'];
-$name=$row['subcat'];
-$pcat=$row['cat_id'];
-$h=mysqli_fetch_assoc(mysqli_query($con,"select * from categories where id='$pcat'"));
-$pcat=$h['category'];
-$template=$template."
+                    }
+                    $id = $row['id'];
+                    $name = $row['subcat'];
+                    $pcat = $row['cat_id'];
+                    $h = mysqli_fetch_assoc(mysqli_query($con, "select * from categories where id='$pcat'"));
+                    $pcat = $h['category'];
+                    $template = $template . "
 <div class='detailrow'>
 <div class='sl'>  $i </div>
 <div class='catname'> $name</div>
@@ -84,10 +84,10 @@ $template=$template."
 </div>
 </div>
 ";
-$i++;
-}
-    echo $template;
-        ?>
+                    $i++;
+                }
+                echo $template;
+                ?>
 
             </div>
         </div>
@@ -102,5 +102,5 @@ $i++;
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>
