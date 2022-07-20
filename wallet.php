@@ -1,9 +1,9 @@
-<?php 
-require('require/top.php'); 
+<?php
+require('require/top.php');
 authorise_user2();
-$sid=$_SESSION['USER_ID'];
-$r=mysqli_fetch_assoc(mysqli_query($con,"select * from user_wallet where user_id='$sid'"));
-$sr=mysqli_query($con,"select * from user_w_msg where u_id='$sid'");
+$sid = $_SESSION['USER_ID'];
+$r = mysqli_fetch_assoc(mysqli_query($con, "select * from user_wallet where user_id='$sid'"));
+$sr = mysqli_query($con, "select * from user_w_msg where u_id='$sid'");
 ?>
 <div class="path">
     <div class="container">
@@ -33,39 +33,39 @@ $sr=mysqli_query($con,"select * from user_w_msg where u_id='$sid'");
                         </div>
                         <div class="order-body10">
                             <ul class="history-list">
-                                <?php 
-        while($row=mysqli_fetch_assoc($sr)){
-                      ?>
-                                <li>
-                                    <div class="purchase-history">
-                                        <div class="purchase-history-left">
-                                            <h4><?php
-                                if($row['cod']==1){
-                                    echo "Credited";
-                                }else{
-                                    echo "Debited";
-                                }
-                              ?></h4>
-                                           <p>Message: <ins><?php echo $row['msg'] ?></ins></p>
-                                            <span> <?php 
-                                echo $row['added_on'];
-                              ?></span>
-                                        </div>
-                                        <div class="purchase-history-right">
-                                            <span>
-                                            <?php
-                                if($row['cod']==1){
-                                    echo "+";
-                                }else{
-                                    echo "-";
-                                }
-                                echo "&#8377;".$row['balance'];
-                              ?>  
-                                            </span>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($sr)) {
+                                ?>
+                                    <li>
+                                        <div class="purchase-history">
+                                            <div class="purchase-history-left">
+                                                <h4><?php
+                                                    if ($row['cod'] == 1) {
+                                                        echo "Credited";
+                                                    } else {
+                                                        echo "Debited";
+                                                    }
+                                                    ?></h4>
+                                                <p>Message: <ins><?php echo $row['msg'] ?></ins></p>
+                                                <span> <?php
+                                                        echo $row['added_on'];
+                                                        ?></span>
+                                            </div>
+                                            <div class="purchase-history-right">
+                                                <span>
+                                                    <?php
+                                                    if ($row['cod'] == 1) {
+                                                        echo "+";
+                                                    } else {
+                                                        echo "-";
+                                                    }
+                                                    echo "&#8377;" . $row['balance'];
+                                                    ?>
+                                                </span>
 
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
                                 <?php } ?>
                             </ul>
                         </div>

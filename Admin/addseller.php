@@ -9,7 +9,7 @@ require('require/top.php');
     </div>
     <div class="catbox-row">
         <div class="catboxp">
-            <h1><?php echo "Add Seller";?> </h1>
+            <h1><?php echo "Add Seller"; ?> </h1>
             <div class="formrow">
                 <div class="heading">
                     Email

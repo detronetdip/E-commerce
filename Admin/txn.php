@@ -1,7 +1,7 @@
 <?php
 require('require/top.php');
-$id=$_GET['sid'];
-$o=mysqli_fetch_assoc(mysqli_query($con,"select * from witdraw_req where s_id='$id'"));
+$id = $_GET['sid'];
+$o = mysqli_fetch_assoc(mysqli_query($con, "select * from witdraw_req where s_id='$id'"));
 ?>
 <div class="wrwr">
     <div class="path" id="path">
@@ -11,7 +11,7 @@ $o=mysqli_fetch_assoc(mysqli_query($con,"select * from witdraw_req where s_id='$
     </div>
     <div class="catbox-row">
         <div class="catboxp">
-            <h1><?php echo "Transaction Detail";?> </h1>
+            <h1><?php echo "Transaction Detail"; ?> </h1>
             <div class="formrow">
                 <div class="heading">
                     Amount

@@ -1,7 +1,7 @@
 <?php
-    require("require/top.php");
-    authorise($con);
-    $sid=$_SESSION['SELLER_ID'];
+require("require/top.php");
+authorise($con);
+$sid = $_SESSION['SELLER_ID'];
 ?>
 <div class="path">
     <div class="container">
@@ -20,22 +20,21 @@
         <div class="maincontainer2">
 
             <form action="#">
-            <div class="formrow">
+                <div class="formrow">
                     <div class="heading">Sub-category</div>
                     <select name="addscatname" id="addscatname">
                         <option value="#">select sub-category</option>
                         <?php
-            
-                      $query2="select * from subcategories order by id desc";
-                      $resi2=mysqli_query($con,$query2);
-                      while($ropw2=mysqli_fetch_assoc($resi2)){
-                        $cname2=$ropw2['subcat'];
-                        $cname2i=$ropw2['id'];
-                        echo "<option value='$cname2i'>$cname2</option> ";
-                        
-                    }
-                  
-                  ?>
+
+                        $query2 = "select * from subcategories order by id desc";
+                        $resi2 = mysqli_query($con, $query2);
+                        while ($ropw2 = mysqli_fetch_assoc($resi2)) {
+                            $cname2 = $ropw2['subcat'];
+                            $cname2i = $ropw2['id'];
+                            echo "<option value='$cname2i'>$cname2</option> ";
+                        }
+
+                        ?>
                     </select>
                 </div>
                 <div class="formrow">
@@ -60,5 +59,5 @@
     </div>
 </div>
 <?php
-    require("require/foot.php");
+require("require/foot.php");
 ?>

@@ -23,32 +23,33 @@
             </div>
             <div class="bspace">
                 <?php
-    $sid=$_SESSION['ID'];
-    $query="select * from orders order by id desc";
-    $res=mysqli_query($con,$query);
-    $i=1;
-    while($row=mysqli_fetch_assoc($res)){
-        $oid=$row['o_id'];
-        $innerres=mysqli_query($con,"select * from order_detail where order_id='$oid' and status='Delivered' and stlment='0' and clearence='1'");
-        $tw=mysqli_fetch_assoc($innerres);
-        if(mysqli_num_rows($innerres)>0){
+                $sid = $_SESSION['ID'];
+                $query = "select * from orders order by id desc";
+                $res = mysqli_query($con, $query);
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $oid = $row['o_id'];
+                    $innerres = mysqli_query($con, "select * from order_detail where order_id='$oid' and status='Delivered' and stlment='0' and clearence='1'");
+                    $tw = mysqli_fetch_assoc($innerres);
+                    if (mysqli_num_rows($innerres) > 0) {
 
-?>
-                <div class="p_row">
-                    <div class="slno"><?php  echo $i; $i++; ?></div>
-                    <div class="p_name"><?php  echo $row['o_id']; ?></div>
-                    <div class="p_status">
-                        <span class="active_span"><?php  echo "Delivered"; ?></span>
-                    </div>
-                    <div class="date"><?php  echo $row['added_on']; ?></div>
-                    <div class="p_action" style="width: 7rem">
-                        <button class="edit"
-                            onclick="redirect_to('settelmentDetail.php?id=<?php echo $row['o_id']; ?>')">
-                            <i class="fa fa-wifi" aria-hidden="true"></i>View
-                        </button>
-                    </div>
-                </div>
-                <?php }} ?>
+                ?>
+                        <div class="p_row">
+                            <div class="slno"><?php echo $i;
+                                                $i++; ?></div>
+                            <div class="p_name"><?php echo $row['o_id']; ?></div>
+                            <div class="p_status">
+                                <span class="active_span"><?php echo "Delivered"; ?></span>
+                            </div>
+                            <div class="date"><?php echo $row['added_on']; ?></div>
+                            <div class="p_action" style="width: 7rem">
+                                <button class="edit" onclick="redirect_to('settelmentDetail.php?id=<?php echo $row['o_id']; ?>')">
+                                    <i class="fa fa-wifi" aria-hidden="true"></i>View
+                                </button>
+                            </div>
+                        </div>
+                <?php }
+                } ?>
             </div>
         </div>
     </div>

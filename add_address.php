@@ -1,8 +1,8 @@
-<?php 
-require('require/top.php'); 
+<?php
+require('require/top.php');
 authorise_user2();
-  $userid=$_SESSION['USER_ID'];
-  $userData=mysqli_fetch_assoc(mysqli_query($con,"select users.*,user_wallet.ballance from users,user_wallet where users.id='$userid' and user_wallet.user_id=users.id"));
+$userid = $_SESSION['USER_ID'];
+$userData = mysqli_fetch_assoc(mysqli_query($con, "select users.*,user_wallet.ballance from users,user_wallet where users.id='$userid' and user_wallet.user_id=users.id"));
 ?>
 <div class="path">
     <div class="container">
@@ -55,23 +55,22 @@ authorise_user2();
                                             </div>
                                             <div class="ft">
                                                 <label for="ft">Mobile*</label>
-                                                <input type="number" placeholder="Number" id="dv-number"
-                                                    oninput="validate_number()" />
+                                                <input type="number" placeholder="Number" id="dv-number" oninput="validate_number()" />
                                             </div>
                                         </div>
                                         <label for="ft">City*</label>
                                         <select name="" id="dv-city">
                                             <option value="#">Select City</option>
                                             <?php
-                                                      $querys="select * from city order by id desc";
-                                                      $ress=mysqli_query($con,$querys);
-                                                      while($rows=mysqli_fetch_assoc($ress)){
-                                                      ?>
-                                            <option value="<?php echo $rows['id'] ?>">
-                                                <?php echo $rows['city_name'] ?></option>
+                                            $querys = "select * from city order by id desc";
+                                            $ress = mysqli_query($con, $querys);
+                                            while ($rows = mysqli_fetch_assoc($ress)) {
+                                            ?>
+                                                <option value="<?php echo $rows['id'] ?>">
+                                                    <?php echo $rows['city_name'] ?></option>
                                             <?php
-                                                      }
-                                                    ?>
+                                            }
+                                            ?>
                                         </select>
                                         <label for="ft">Flat / House / Office No.*</label>
                                         <input type="text" placeholder="Address" id="dv-address" />

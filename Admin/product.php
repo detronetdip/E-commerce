@@ -1,6 +1,6 @@
 <?php
- require('require/top.php');
- ?>
+require('require/top.php');
+?>
 <div class="wrwr">
     <div class="path" id="path">
         <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
@@ -23,50 +23,50 @@
             </div>
             <div class="bspace" id="productsecrow">
                 <?php
-            $query="select * from product where isappp='1' order by id desc";
-            $res=mysqli_query($con,$query);
-            $i=1;
-            while($row=mysqli_fetch_assoc($res)){
-            $st='';
-            $cb='';
-            $idd=$row['id'];
-            if($row['status']==1){
-            $st="Active";
-              $cb="<button class='deactive' onclick='product_acdc($idd, 0)'>
+                $query = "select * from product where isappp='1' order by id desc";
+                $res = mysqli_query($con, $query);
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $st = '';
+                    $cb = '';
+                    $idd = $row['id'];
+                    if ($row['status'] == 1) {
+                        $st = "Active";
+                        $cb = "<button class='deactive' onclick='product_acdc($idd, 0)'>
               <i class='fa fa-eye-slash' aria-hidden='true'></i>Deactive
             </button>";
-            }else{
-            $st="Deactive";
-            $cb="
+                    } else {
+                        $st = "Deactive";
+                        $cb = "
             <button class='active' onclick='product_acdc($idd, 1)'>
             <i class='fa fa-eye' aria-hidden='true'></i>Active
           </button>
             ";
-            }
-        ?>
-                <div class="p_row">
-                    <div class="slno"><?php echo $i; ?></div>
-                    <div class="p_image">
-                        <img src="../media/product/<?php echo $row['img1']; ?>" alt="product" />
+                    }
+                ?>
+                    <div class="p_row">
+                        <div class="slno"><?php echo $i; ?></div>
+                        <div class="p_image">
+                            <img src="../media/product/<?php echo $row['img1']; ?>" alt="product" />
+                        </div>
+                        <div class="p_name"><?php echo $row['product_name']; ?> </div>
+                        <div class="p_status">
+                            <?php echo $st; ?>
+                        </div>
+                        <div class="p_action">
+                            <button class="edit" onclick="showdetailproduct(<?php echo $row['id']; ?>)">
+                                <i class="fa fa-wifi" aria-hidden="true"></i>View
+                            </button>
+                            <?php echo $cb; ?>
+                            <button class="delete" onclick="delete_product(<?php echo $row['id']; ?>)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>Delete
+                            </button>
+                        </div>
                     </div>
-                    <div class="p_name"><?php echo $row['product_name']; ?> </div>
-                    <div class="p_status">
-                        <?php echo $st; ?>
-                    </div>
-                    <div class="p_action">
-                        <button class="edit" onclick="showdetailproduct(<?php echo $row['id']; ?>)">
-                            <i class="fa fa-wifi" aria-hidden="true"></i>View
-                        </button>
-                        <?php echo $cb; ?>
-                        <button class="delete" onclick="delete_product(<?php echo $row['id']; ?>)">
-                            <i class="fa fa-trash" aria-hidden="true"></i>Delete
-                        </button>
-                    </div>
-                </div>
                 <?php
-     $i++;
-  }
-  ?>
+                    $i++;
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -80,5 +80,5 @@
     </div>
 </div>
 <?php
- require('require/foot.php');
+require('require/foot.php');
 ?>
