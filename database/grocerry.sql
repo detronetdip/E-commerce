@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `grocerry`
 --
-
+CREATE DATABASE grocerry;
+USE grocerry;
 -- --------------------------------------------------------
 
 --
@@ -180,7 +181,12 @@ CREATE TABLE `dc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+--
+-- Dumping data for table `dc`
+--
 
+INSERT INTO `dc` (`dc`, `pc`) VALUES
+(0, 0);
 --
 -- Table structure for table `delivery_boy`
 --
