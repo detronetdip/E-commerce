@@ -6,7 +6,7 @@ $q = "select * from sellers where isapp='$z' and is_cp='$o'";
 $r = mysqli_query($con, $q);
 while ($g = mysqli_fetch_assoc($r)) {
     $ids = $g['id'];
-    mysqli_query($con, "update sellers set isnew='0' where id='$ids'");
+    mysqli_query($con, "update sellers set is_new='0' where id='$ids'");
 }
 ?>
 
