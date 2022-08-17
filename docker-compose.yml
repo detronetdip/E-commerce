@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     image: database
-    container_name: mysql-test
+    container_name: app_database
     environment:
         MYSQL_ROOT_PASSWORD: passwd
     build:
@@ -15,7 +15,7 @@ services:
     depends_on:
         - db
     image: app
-    container_name: app_test
+    container_name: app
     build:
         context: .
         dockerfile: Dockerfile
