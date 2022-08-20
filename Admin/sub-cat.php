@@ -13,7 +13,7 @@ require('require/top.php');
             <button class="add" onclick="showadsctfa()">
                 <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Add
             </button>
-            <input type="text" placeholder="Search by Category" id="sfield" onkeyup="search('sfield','nos')" />
+            <input type="text" placeholder="Search by Category" id="sfield" onkeyup="search('sfield','catname')" />
         </div>
     </div>
     <div class="catbox-row">
