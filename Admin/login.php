@@ -3,7 +3,6 @@ require('../utility/utility.php');
 if (isset($_SESSION['IS_LOGIN_ADMIN'])) {
     redirect('index.php');
 } else {
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -24,15 +23,6 @@ if (isset($_SESSION['IS_LOGIN_ADMIN'])) {
     </head>
 
     <body>
-        <div class="header-top">
-            <div class="container-nav">
-                <div class="row" style="margin: 0px;">
-                    <div class="logo-div">
-                        <img src="assets/images/roz.png" style="margin-left: 0px;" />
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row py-5 mt-4 align-items-center">
                 <!-- For Demo Purpose -->
@@ -74,13 +64,6 @@ if (isset($_SESSION['IS_LOGIN_ADMIN'])) {
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="footer-container" style="background-color: #556ee6; color: #fff;">
-            <div class="footer-bottom">
-                <div class="row">
-                    <p class="copyright">Copyright &copy; Rozer</p>
                 </div>
             </div>
         </div>
