@@ -64,16 +64,6 @@
             background: #f9f9f9;
             padding: 20px;
             border-radius: 5px;
-            .reject-badge-red{
-              height: 100%;
-              width: 100%;
-              padding: 20px;
-              background-color: #ffefee;
-              color: #FF4C41;
-              border: 1px solid #FF4C41;
-              border-radius: 6px;
-              font-size: 1.4rem;
-            }
             ul {
               list-style: none;
               li {
@@ -115,7 +105,6 @@
                     color: #8f91ac;
                   }
                 }
-                
               }
             }
             .gty-wish-share {
@@ -251,7 +240,6 @@
                       color: #3e3f5e;
                       line-height: 26px;
                       text-align: left;
-                      word-wrap: break-word;
                     }
                   }
                   p {

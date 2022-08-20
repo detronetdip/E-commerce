@@ -21,7 +21,7 @@ let control = {
   },
   getintInput: function (e) {
     let value;
-    value = parseInt(document.getElementById(e).valueAsNumber);
+    value = parseInt(document.getElementById(e).value);
     return value;
   },
   putValue: function (e, k) {
@@ -51,9 +51,6 @@ let control = {
   },
   get: (e) => {
     return document.getElementById(e);
-  },
-  redirect: (path) => {
-    window.location.href = path;
   },
 };
 function hide() {
@@ -114,7 +111,7 @@ function validatefile(e) {
   var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
   if (!allowedExtensions.exec(filePath)) {
     fileInput.value = "";
-    return 0;
+    return 0
   } else {
     return 1;
   }
@@ -122,94 +119,4 @@ function validatefile(e) {
 function view(e) {
   let div = control.get("mi");
   div.src = e.src;
-}
-function login() {
-  var username = control.getInput("username");
-  var password = control.getInput("password");
-  if (username == "") {
-    control.popup("Enter Username", W);
-  } else if (password == "") {
-    control.popup("Enter Password", W);
-  } else {
-    control.html("lgbtn", "wait...");
-    $.ajax({
-      url: "../../assets/backend/auth/validate.php",
-      type: "post",
-      data: "username=" + username + "&password=" + password,
-      success: function (htl) {
-        var html = JSON.parse(htl);
-        if (html.status != 1) {
-          control.popup(html.msg, W);
-          control.html("lgbtn", "Login");
-        } else {
-          control.redirect("../../");
-        }
-      },
-    });
-  }
-}
-function logout() {
-  var email = 0;
-  $.ajax({
-    url: "assets/backend/auth/logout.php",
-    type: "post",
-    data: "email=" + email,
-    success: function (htl) {
-      control.reload();
-    },
-  });
-}
-function rcvd(e, oid) {
-  var pid = e.value;
-  if (e.checked) {
-    $.ajax({
-      url: "assets/backend/delivery/handover.php",
-      type: "post",
-      data: "oid=" + oid + "&pid=" + pid,
-      success: function (html) {
-        control.reload();
-      },
-    });
-  }
-}
-function out(oid) {
-  $.ajax({
-    url: "assets/backend/delivery/out.php",
-    type: "post",
-    data: "oid=" + oid,
-    success: function (html) {
-      control.redirect("outfordelivery.php");
-    },
-  });
-}
-function final_submit(e,pid,oid) {
-  var qty = e.previousElementSibling.value;
-  $.ajax({
-    url: "assets/backend/delivery/final.php",
-    type: "post",
-    data: "qty=" + qty+ "&pid=" + pid+ "&oid=" + oid,
-    success: function (html) {
-      control.reload();
-    },
-  });
-}
-function delivered(oid){
-  $.ajax({
-    url: "assets/backend/delivery/delivered.php",
-    type: "post",
-    data: "oid=" + oid,
-    success: function (html) {
-      control.redirect("delivery_confirmation.php");
-    },
-  });
-}
-function out_undelivered(oid){
-  $.ajax({
-    url: "assets/backend/delivery/undelivered.php",
-    type: "post",
-    data: "oid=" + oid,
-    success: function (html) {
-      control.redirect("undelivery_cnfrm.php");
-    },
-  });
 }
