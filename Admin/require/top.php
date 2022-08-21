@@ -8,15 +8,15 @@ if (!isset($_SESSION['IS_LOGIN_ADMIN'])) {
     <!DOCTYPE html>
     <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Home</title>
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src="https://kit.fontawesome.com/1615ee01dc.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Admin Panel | Dashbord</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://kit.fontawesome.com/1615ee01dc.js" crossorigin="anonymous"></script>
+</head>
 
     <body>
         <div class="floatwrap" id="floatwrap">
@@ -154,61 +154,68 @@ if (!isset($_SESSION['IS_LOGIN_ADMIN'])) {
                             <i class="fa fa-align-left" aria-hidden="true"></i>
                             &nbsp;SubCategories
 
-                        </li>
-                    </a>
-                    <a href="filters.php">
-                        <li>
-                            <i class="fa fa-filter" aria-hidden="true"></i>
-                            &nbsp;Add Filter
+                    </li>
+                </a>
+                <a href="loacationc.php">
+                    <li>
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        &nbsp;Add Country
 
-                        </li>
-                    </a>
-                    <a href="subfilters.php">
-                        <li>
-                            <i class="fa fa-hourglass-start" aria-hidden="true"></i>
-                            &nbsp;Add Sub-Filter
+                    </li>
+                </a>
+                <a href="loacations.php">
+                    <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        &nbsp;Add State
 
-                        </li>
-                    </a>
-                    <a href="loacationc.php">
-                        <li>
-                            <i class="fa fa-globe" aria-hidden="true"></i>
-                            &nbsp;Add Country
+                    </li>
+                </a>
+                <a href="loacationci.php">
+                    <li>
+                        <i class="fa fa-building-o" aria-hidden="true"></i>
+                        &nbsp;Add City
 
-                        </li>
-                    </a>
-                    <a href="loacations.php">
-                        <li>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            &nbsp;Add State
+                    </li>
+                </a>
+                <a href="locationpin.php">
+                    <li>
+                        <i class="fa fa-map-pin" aria-hidden="true"></i>
+                        &nbsp;Add Pincode
 
-                        </li>
-                    </a>
-                    <a href="loacationci.php">
-                        <li>
-                            <i class="fa fa-building-o" aria-hidden="true"></i>
-                            &nbsp;Add City
+                    </li>
+                </a>
+                <a href="business.php">
+                    <li>
+                        <i class="fa fa-bullseye" aria-hidden="true"></i>
+                        &nbsp;Add Business Type
 
-                        </li>
-                    </a>
-                    <a href="locationpin.php">
-                        <li>
-                            <i class="fa fa-map-pin" aria-hidden="true"></i>
-                            &nbsp;Add Pincode
+                    </li>
+                </a>
+                <a href="filters.php">
+                    <li>
+                        <i class="fa fa-filter" aria-hidden="true"></i>
+                        &nbsp;Add Filter
 
-                        </li>
-                    </a>
-                    <a href="business.php">
-                        <li>
-                            <i class="fa fa-bullseye" aria-hidden="true"></i>
-                            &nbsp;Add Business Type
+                    </li>
+                </a>
+                <a href="subfilters.php">
+                    <li>
+                        <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                        &nbsp;Add Sub-Filter
 
-                        </li>
-                    </a>
-                    <a href="product.php">
-                        <li>
-                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                            &nbsp;Product
+                    </li>
+                </a>
+                <a href="ad_dv_time.php">
+                    <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                        &nbsp;Delivery Time
+
+                    </li>
+                </a>
+                <a href="product.php">
+                    <li>
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        &nbsp;Product
 
                         </li>
                     </a>
@@ -231,19 +238,12 @@ if (!isset($_SESSION['IS_LOGIN_ADMIN'])) {
                             <i class="fa fa-user" aria-hidden="true"></i>
                             &nbsp;Delivery Boy
 
-                        </li>
-                    </a>
-                    <a href="ad_dv_time.php">
-                        <li>
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            &nbsp;Delivery Time
-
-                        </li>
-                    </a>
-                    <a href="incompleteorder.php">
-                        <li>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                            &nbsp;Incomplete Orders
+                    </li>
+                </a>
+                <a href="incompleteorder.php">
+                    <li>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        &nbsp;Incomplete Orders
 
                         </li>
                     </a>
