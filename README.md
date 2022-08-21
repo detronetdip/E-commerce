@@ -27,4 +27,6 @@
     <img src="https://img.shields.io/badge/PHP-777BB4?&logo=php&logoColor=white" alt="PHP"/>
     &nbsp;
     <img src="https://img.shields.io/badge/MySQL-005C84?&logo=mysql&logoColor=white" alt="MYSQl"/>
+    &nbsp;
+    <img src="https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white" alt="docker"/>
 </p>
