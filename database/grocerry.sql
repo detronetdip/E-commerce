@@ -523,13 +523,13 @@ CREATE TABLE `sub_filter` (
 --
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` text NOT NULL,
-  `mobile` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `m_vfd` tinyint(1) NOT NULL,
-  `e_vfd` tinyint(1) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `email` varchar(255) DEFAULT '',
+  `password` text DEFAULT '',
+  `mobile` varchar(255) DEFAULT '',
+  `name` varchar(255) DEFAULT '',
+  `m_vfd` tinyint(1) DEFAULT 0,
+  `e_vfd` tinyint(1) DEFAULT 0,
+  `status` tinyint(1) DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
