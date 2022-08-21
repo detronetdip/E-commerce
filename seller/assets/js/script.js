@@ -178,6 +178,7 @@ function register() {
       type: "post",
       data: "email=" + email + "&password=" + password + "&mobile=" + mobile,
       success: function (htl) {
+        console.log(htl);
         var html = JSON.parse(htl);
         if (html.status != 1) {
           control.popup(html.msg, W);
@@ -187,6 +188,7 @@ function register() {
         }
       },
     });
+    console.log("sent");
   }
 }
 function getstatelist() {
@@ -1579,7 +1581,7 @@ function addpromo() {
     },
   });
 }
-function delpromo(id){
+function delpromo(id) {
   $.ajax({
     url: "assets/backend/promo/del.php",
     type: "post",

@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: database
+    container_name: app_database
+    environment:
+        MYSQL_ROOT_PASSWORD: passwd
+    build:
+        context: ./database/
+        dockerfile: Dockerfile
+    ports:
+        - "9306:3306"
+  web:
+    depends_on:
+        - db
+    image: app
+    container_name: app
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+        - "3000:80"

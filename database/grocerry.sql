@@ -81,14 +81,14 @@ CREATE TABLE `business_type` (
 CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
   `u_id` int(11) NOT NULL,
-  `total` float NOT NULL,
-  `is_applied` tinyint(1) NOT NULL,
-  `promo` float NOT NULL,
-  `is_add_w` tinyint(1) NOT NULL,
-  `wl_amt` float NOT NULL,
-  `final_amt` float NOT NULL,
-  `ship_fee` tinyint(1) NOT NULL,
-  `belonging_city` int(11) NOT NULL
+  `total` float DEFAULT 0,
+  `is_applied` tinyint(1) DEFAULT 0,
+  `promo` float DEFAULT 0,
+  `is_add_w` tinyint(1) DEFAULT 0,
+  `wl_amt` float DEFAULT 0,
+  `final_amt` float DEFAULT 0,
+  `ship_fee` tinyint(1) DEFAULT 0,
+  `belonging_city` int(11) DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
@@ -177,9 +177,9 @@ CREATE TABLE `dc` (
 -- Dumping data for table `dc`
 --
 INSERT INTO
-  `dc` (`dc`, `pc`)
+  `dc` (`id`,`dc`, `pc`)
 VALUES
-  (1, 0, 0);
+  (1,0, 0);
 
 --
 -- Table structure for table `delivery_boy`
@@ -240,27 +240,27 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `o_id` text NOT NULL,
   `u_id` int(11) NOT NULL,
-  `ad_id` int(11) NOT NULL,
-  `dv_date` varchar(255) NOT NULL,
-  `dv_time` varchar(255) NOT NULL,
-  `payment_type` int(11) NOT NULL,
-  `payment_status` int(11) NOT NULL,
-  `order_status` int(11) NOT NULL,
-  `mihpayid` varchar(255) NOT NULL,
-  `txnid` varchar(255) NOT NULL,
-  `payu_status` varchar(255) NOT NULL,
-  `total_amt` float NOT NULL,
-  `ship_fee_order` float NOT NULL,
-  `final_val` float NOT NULL,
-  `isnew` int(11) NOT NULL,
-  `delivered_by` int(11) NOT NULL,
-  `u_cnfrm` int(11) NOT NULL,
-  `ptu` int(11) NOT NULL,
-  `udvc` int(11) NOT NULL,
-  `is_p_app` int(11) NOT NULL,
-  `is_w_ap` int(11) NOT NULL,
-  `prmo` float NOT NULL,
-  `wlmt` float NOT NULL
+  `ad_id` int(11) DEFAULT 0,
+  `dv_date` varchar(255) DEFAULT '',
+  `dv_time` varchar(255) DEFAULT '',
+  `payment_type` int(11) DEFAULT 0,
+  `payment_status` int(11) DEFAULT 0,
+  `order_status` int(11) DEFAULT 0,
+  `mihpayid` varchar(255) DEFAULT '',
+  `txnid` varchar(255) DEFAULT '',
+  `payu_status` varchar(255) DEFAULT '',
+  `total_amt` float DEFAULT 0,
+  `ship_fee_order` float DEFAULT 0,
+  `final_val` float DEFAULT 0,
+  `isnew` int(11) DEFAULT 0,
+  `delivered_by` int(11) DEFAULT 0,
+  `u_cnfrm` int(11) DEFAULT 0,
+  `ptu` int(11) DEFAULT 0,
+  `udvc` int(11) DEFAULT 0,
+  `is_p_app` int(11) DEFAULT 0,
+  `is_w_ap` int(11) DEFAULT 0,
+  `prmo` float DEFAULT 0,
+  `wlmt` float DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
@@ -272,9 +272,9 @@ CREATE TABLE `order_detail` (
   `oid` int(11) NOT NULL,
   `p_id` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `hover` int(11) NOT NULL,
-  `rcvd` int(11) NOT NULL,
-  `delivered_qty` int(100) NOT NULL
+  `hover` int(11) DEFAULT 0,
+  `rcvd` int(11) DEFAULT 0,
+  `delivered_qty` int(100) DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
@@ -308,8 +308,8 @@ CREATE TABLE `order_stlmnt` (
   `id` int(11) NOT NULL,
   `oid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
-  `val` float NOT NULL,
-  `sc` float NOT NULL
+  `val` float DEFAULT 0,
+  `sc` float DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
@@ -434,31 +434,31 @@ CREATE TABLE `rejection` (
 --
 CREATE TABLE `sellers` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT '',
   `password` text NOT NULL,
-  `mobile` varchar(50) NOT NULL,
-  `f_name` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `tob` int(11) NOT NULL,
-  `country` int(11) NOT NULL,
-  `state` int(11) NOT NULL,
-  `city` int(11) NOT NULL,
-  `pin` int(11) NOT NULL,
-  `b_name` varchar(255) NOT NULL,
-  `b_crft` varchar(255) NOT NULL,
-  `is_gst` tinyint(1) NOT NULL,
-  `gst_id` varchar(255) NOT NULL,
-  `gst_crft` varchar(255) NOT NULL,
-  `acc_num` varchar(255) NOT NULL,
-  `acc_holder` varchar(255) NOT NULL,
-  `ifsc` varchar(255) NOT NULL,
-  `bank` varchar(255) NOT NULL,
-  `branch` varchar(255) NOT NULL,
-  `isapp` int(11) NOT NULL,
+  `mobile` varchar(50) DEFAULT '',
+  `f_name` varchar(255) DEFAULT '',
+  `address` varchar(255) DEFAULT '',
+  `tob` int(11) DEFAULT 0,
+  `country` int(11) DEFAULT 0,
+  `state` int(11) DEFAULT 0,
+  `city` int(11) DEFAULT 0,
+  `pin` int(11) DEFAULT 0,
+  `b_name` varchar(255) DEFAULT '',
+  `b_crft` varchar(255) DEFAULT '',
+  `is_gst` tinyint(1) DEFAULT 0,
+  `gst_id` varchar(255) DEFAULT '',
+  `gst_crft` varchar(255) DEFAULT '',
+  `acc_num` varchar(255) DEFAULT '',
+  `acc_holder` varchar(255) DEFAULT '',
+  `ifsc` varchar(255) DEFAULT '',
+  `bank` varchar(255) DEFAULT '',
+  `branch` varchar(255) DEFAULT '',
+  `isapp` int(11) DEFAULT 0,
   `is_new` tinyint(1) NOT NULL,
-  `is_cp` tinyint(1) NOT NULL,
-  `adhar` varchar(255) NOT NULL,
-  `pan` varchar(255) NOT NULL,
+  `is_cp` tinyint(1) DEFAULT 0,
+  `adhar` varchar(255) DEFAULT '',
+  `pan` varchar(255) DEFAULT '',
   `status` tinyint(1) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
@@ -483,7 +483,7 @@ CREATE TABLE `seller_w_msg` (
   `msg` text NOT NULL,
   `balance` float NOT NULL,
   `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `is_new` tinyint(1) NOT NULL
+  `is_new` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
@@ -591,7 +591,7 @@ CREATE TABLE `witdraw_req` (
   `s_id` int(11) NOT NULL,
   `amount_w` float NOT NULL,
   `amount_r` float NOT NULL,
-  `isnew` int(11) NOT NULL
+  `isnew` int(11) NOT NULL DEFAULT 0
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 --
