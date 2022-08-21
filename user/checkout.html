@@ -218,23 +218,23 @@
                   <ul>
                     <li>
                       <i class="uil uil-chat-bubble-user"></i
-                      ><a href="">My Account</a>
+                      ><a href="myorders.html">My Account</a>
                     </li>
-                    <li><i class="uil uil-box"></i><a href="">My Orders</a></li>
+                    <li><i class="uil uil-box"></i><a href="myorders.html">My Orders</a></li>
                     <li>
                       <i class="uil uil-heart-alt"></i
-                      ><a href="">My Wishlist</a>
+                      ><a href="wishlist.html">My Wishlist</a>
                     </li>
                     <li>
                       <i class="uil uil-shopping-cart"></i
-                      ><a href="">My Cart</a>
+                      ><a href="cart.html">My Cart</a>
                     </li>
                     <li>
-                      <i class="uil uil-wallet"></i><a href="">My Wallet</a>
+                      <i class="uil uil-wallet"></i><a href="mywallet.html">My Wallet</a>
                     </li>
                     <li>
                       <i class="uil uil-map-marker-alt"></i
-                      ><a href="">My Address</a>
+                      ><a href="address.html">My Address</a>
                     </li>
                     <li><i class="uil uil-signin"></i><a href="">Login</a></li>
                     <li>
@@ -524,7 +524,9 @@
             </div>
           </nav>
           <div class="cart-right">
-            <i class="uil uil-shopping-cart-alt"></i>Cart
+            <a href="cart.html" style="text-decoration: none; color: #fff"
+            ><i class="uil uil-shopping-cart-alt"></i>Cart</a
+          >
           </div>
           <div class="srch" onclick="openrss()">
             <i class="uil uil-search"></i>
@@ -573,7 +575,7 @@
           <div class="right">
             <div class="col-lg-12 col-md-12">
               <div class="pdpt-bg">
-                <form action="#" method="get">
+                <form action="order_placed.html" method="get">
                   <div class="step">
                     <div class="tittle" onclick="open_address(this)" id="ct-ad">
                       <span>1</span>
@@ -812,7 +814,9 @@
                         </div>
                       </div>
                       <div class="row2">
-                        <button class="next-step">Place Order</button>
+                        <a href="order_placed.html" style="width: 100%;margin: 0;">
+                          <button style="margin: 0;">Place Order</button>
+                        </a>
                       </div>
                     </div>
                   </div>
