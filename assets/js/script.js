@@ -775,17 +775,17 @@ function confirm_delivered_order(oid) {
     type: "post",
     data: "id=" + oid,
     success: function (html) {
-      control.redirect('myac.php');
+      control.redirect("myac.php");
     },
   });
 }
-function not_confirm_delivered_order(oid){
+function not_confirm_delivered_order(oid) {
   $.ajax({
     url: "assets/backend/order/ncnfrm.php",
     type: "post",
     data: "id=" + oid,
     success: function (html) {
-      control.redirect('myac.php');
+      control.redirect("myac.php");
     },
   });
 }
