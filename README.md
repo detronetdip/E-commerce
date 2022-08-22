@@ -30,3 +30,32 @@
     &nbsp;
     <img src="https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white" alt="docker"/>
 </p>
+
+### How to run
+
+  You can run this project by manually setting up everything or you can simply run it with docker or docker-compose to avoid overhead hustles.
+
+### Run with docker
+
+  To run this with docker please follow the following instructions.
+  ***Please make sure that docker is installed in your system.***
+  
+  - Run `git clone https://github.com/detronetdip/E-commerce.git`    clone this repo to your system.
+  - Run `cd {to your cloned path}/E-commerce/`
+  - Run `docker build -t app -f Dockerfile .` to build the image of the main website.
+  - Run `cd database` to go inside database directory.
+  - Run `docker build -t app_database -f Dockerfile .` to build the image of the database.
+  - Run `docker run --name database -e MYSQL_ROOT_PASSWORD='passwd' -p 9306:3306 app_database` to run a database instance.
+  - Run `docker run --name web_app -p 3000:80 app` to run the instance of the app.
+  - Go to your browser and type `http://localhost:3000` and the whole project is ready to use.
+
+### Run with docker-compose
+
+  To run this with docker-compose please follow the following instructions.
+  ***Please make sure that docker and docker-compose is installed in your system.***
+  
+  - Run `git clone https://github.com/detronetdip/E-commerce.git`    clone this repo to your system.
+  - Run `cd {to your cloned path}/E-commerce/`
+  - Run `docker-compose up -d --build` to build and deploy the whole system.
+  - Go to your browser and type `http://localhost:3000` and the whole project is ready to use.
+  - ***if you initialy encoutered connection refused error please wait for few seconds and relod the page.*
