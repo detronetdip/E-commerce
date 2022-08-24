@@ -37,25 +37,34 @@
 
 ### Run with docker
 
-  To run this with docker please follow the following instructions.
+  To run this with docker please run the following commands.
   ***Please make sure that docker is installed in your system.***
   
-  - Run `git clone https://github.com/detronetdip/E-commerce.git`    clone this repo to your system.
-  - Run `cd {to your cloned path}/E-commerce/`
-  - Run `docker build -t app -f Dockerfile .` to build the image of the main website.
-  - Run `cd database` to go inside database directory.
-  - Run `docker build -t app_database -f Dockerfile .` to build the image of the database.
-  - Run `docker run --name database -e MYSQL_ROOT_PASSWORD='passwd' -p 9306:3306 app_database` to run a database instance.
-  - Run `docker run --name web_app -p 3000:80 app` to run the instance of the app.
+  ```
+   > git clone https://github.com/detronetdip/E-commerce.git
+   > cd {to your cloned path}/E-commerce/
+   > docker build -t app -f Dockerfile .
+   > cd database
+   > docker build -t app_database -f Dockerfile .
+   > docker run \
+       --name database \
+       -e MYSQL_ROOT_PASSWORD='passwd' \
+       -p 9306:3306 app_database
+   > docker run --name web_app -p 3000:80 app
+  ```
   - Go to your browser and type `http://localhost:3000` and the whole project is ready to use.
 
 ### Run with docker-compose
 
-  To run this with docker-compose please follow the following instructions.
+  To run this with docker-compose please run the following commands.
   ***Please make sure that docker and docker-compose is installed in your system.***
   
-  - Run `git clone https://github.com/detronetdip/E-commerce.git`    clone this repo to your system.
-  - Run `cd {to your cloned path}/E-commerce/`
-  - Run `docker-compose up -d --build` to build and deploy the whole system.
+  ```
+    git clone https://github.com/detronetdip/E-commerce.git
+
+    cd {to your cloned path}/E-commerce/`
+
+    docker-compose up -d --build
+  ```
   - Go to your browser and type `http://localhost:3000` and the whole project is ready to use.
-  - ***if you initialy encoutered connection refused error please wait for few seconds and relod the page.*
+  - ***if you initialy encoutered connection refused error please wait for few seconds and relod the page.**
