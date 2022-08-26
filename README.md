@@ -30,3 +30,5 @@
     &nbsp;
     <img src="https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white" alt="docker"/>
 </p>
+
+### This branch contains only the frontend part of this project. To view full project please switch to the [main](https://github.com/detronetdip/E-commerce/tree/main) branch.
