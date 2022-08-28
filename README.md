@@ -60,11 +60,11 @@
   ***Please make sure that docker and docker-compose is installed in your system.***
   
   ```
-    git clone https://github.com/detronetdip/E-commerce.git
+   > git clone https://github.com/detronetdip/E-commerce.git
 
-    cd {to your cloned path}/E-commerce/`
+   > cd {to your cloned path}/E-commerce/`
 
-    docker-compose up -d --build
+   > docker-compose up -d --build
   ```
   - Go to your browser and type `http://localhost:3000` and the whole project is ready to use.
   - ***if you initialy encoutered connection refused error please wait for few seconds and relod the page.**
