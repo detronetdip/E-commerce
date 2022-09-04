@@ -14,7 +14,7 @@
                         <div class="owl-carousel owl-theme product-slider">
                             <div class="item">
                                 <div class="productBox">
-                                    <a href="product.html" class="product-image">
+                                    <a href="{{url()->current()}}/View" class="product-image">
                                         <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
                                         <div class="topOption">
                                             <span class="offer">10% off</span>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="item">
                                 <div class="productBox">
-                                    <a href="product.html" class="product-image">
+                                    <a href="{{url()->current()}}/View" class="product-image">
                                         <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                         <div class="topOption">
                                             <span class="offer">10% off</span>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="item">
                                 <div class="productBox">
-                                    <a href="product.html" class="product-image">
+                                    <a href="{{url()->current()}}/View" class="product-image">
                                         <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                         <div class="topOption">
                                             <span class="offer">10% off</span>
@@ -98,7 +98,7 @@
                             </div>
                             <div class="item">
                                 <div class="productBox">
-                                    <a href="product.html" class="product-image">
+                                    <a href="{{url()->current()}}/View" class="product-image">
                                         <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                         <div class="topOption">
                                             <span class="offer">10% off</span>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="item">
                                 <div class="productBox">
-                                    <a href="product.html" class="product-image">
+                                    <a href="{{url()->current()}}/View" class="product-image">
                                         <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                         <div class="topOption">
                                             <span class="offer">10% off</span>
@@ -168,7 +168,7 @@
                     <div class="owl-carousel owl-theme product-slider">
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -196,7 +196,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -252,7 +252,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -280,7 +280,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -352,7 +352,7 @@
                     <div class="owl-carousel owl-theme product-slider">
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -380,7 +380,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -408,7 +408,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -436,7 +436,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -464,7 +464,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -504,7 +504,7 @@
                     <div class="owl-carousel owl-theme product-slider">
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -532,7 +532,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -560,7 +560,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -588,7 +588,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>
@@ -616,7 +616,7 @@
                         </div>
                         <div class="item">
                             <div class="productBox">
-                                <a href="product.html" class="product-image">
+                                <a href="{{url()->current()}}/View" class="product-image">
                                     <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                     <div class="topOption">
                                         <span class="offer">10% off</span>

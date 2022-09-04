@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class Home extends Controller
 {
-    //
     public function index($location = null)
     {
         $title = 'Home';
