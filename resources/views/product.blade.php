@@ -7,7 +7,7 @@
             /
             <a href="index.html">cat1</a>
             /
-            <a href="index.html">product tittle</a>
+            <a href="{{ url()->current() }}">product tittle</a>
         </div>
     </div>
 
@@ -132,104 +132,28 @@
                                     <h4>more like this</h4>
                                 </div>
                                 <div class="product-container">
-                                    <div class="card">
-                                        <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt="" />
-                                        </a>
-                                        <div class="detail">
-                                            <h4>Product tittle here</h4>
-                                            <div class="qty-group">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn" />
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text" />
-                                                    <input type="button" value="+" class="plus plus-btn" />
-                                                </div>
-                                                <div class="cart-item-price">
-                                                    $12 <span>$15</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt="" />
-                                        </a>
-                                        <div class="detail">
-                                            <h4>Product tittle here</h4>
-                                            <div class="qty-group">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn" />
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text" />
-                                                    <input type="button" value="+" class="plus plus-btn" />
-                                                </div>
-                                                <div class="cart-item-price">
-                                                    $12 <span>$15</span>
+                                    @for ($i = 0; $i < 5; $i++)
+                                        <div class="card">
+                                            <a href="">
+                                                <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
+                                                    alt="" />
+                                            </a>
+                                            <div class="detail">
+                                                <h4>Product tittle here</h4>
+                                                <div class="qty-group">
+                                                    <div class="quantity buttons_added">
+                                                        <input type="button" value="-" class="minus minus-btn" />
+                                                        <input type="number" step="1" name="quantity" value="1"
+                                                            class="input-text qty text" />
+                                                        <input type="button" value="+" class="plus plus-btn" />
+                                                    </div>
+                                                    <div class="cart-item-price">
+                                                        $12 <span>$15</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="card">
-                                        <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
-                                                alt="" />
-                                        </a>
-                                        <div class="detail">
-                                            <h4>Product tittle here</h4>
-                                            <div class="qty-group">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn" />
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text" />
-                                                    <input type="button" value="+" class="plus plus-btn" />
-                                                </div>
-                                                <div class="cart-item-price">
-                                                    $12 <span>$15</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
-                                                alt="" />
-                                        </a>
-                                        <div class="detail">
-                                            <h4>Product tittle here</h4>
-                                            <div class="qty-group">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn" />
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text" />
-                                                    <input type="button" value="+" class="plus plus-btn" />
-                                                </div>
-                                                <div class="cart-item-price">
-                                                    $12 <span>$15</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
-                                                alt="" />
-                                        </a>
-                                        <div class="detail">
-                                            <h4>Product tittle here</h4>
-                                            <div class="qty-group">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn" />
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text" />
-                                                    <input type="button" value="+" class="plus plus-btn" />
-                                                </div>
-                                                <div class="cart-item-price">
-                                                    $12 <span>$15</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endfor
                                 </div>
                             </div>
                         </div>
@@ -307,146 +231,36 @@
             </div>
             <div class="row mt3 ct-row">
                 <div class="owl-carousel owl-theme product-slider">
-                    <div class="item">
-                        <div class="productBox">
-                            <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
-                                <div class="topOption">
-                                    <span class="offer">10% off</span>
-                                    <span class="wishlist">
-                                        <i class="uil uil-heart"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <div class="product-detail">
-                                <p>Available (In Stock)</p>
-                                <h4>Product Tittle</h4>
-                                <div class="price">&#8377;100 <span>&#8377;110</span></div>
-                                <div class="cartqt">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn" />
-                                        <input type="number" name="quantity" value="1" class="qty-text" />
-                                        <input type="button" value="+" class="plus plus-btn" />
+                    @for ($i = 0; $i < 5; $i++)
+                        <div class="item">
+                            <div class="productBox">
+                                <a href="" class="product-image">
+                                    <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
+                                    <div class="topOption">
+                                        <span class="offer">10% off</span>
+                                        <span class="wishlist">
+                                            <i class="uil uil-heart"></i>
+                                        </span>
                                     </div>
-                                    <div class="ct-icon">
-                                        <i class="uil uil-shopping-cart-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="productBox">
-                            <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
-                                <div class="topOption">
-                                    <span class="offer">10% off</span>
-                                    <span class="wishlist">
-                                        <i class="uil uil-heart"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <div class="product-detail">
-                                <p>Available (In Stock)</p>
-                                <h4>Product Tittle</h4>
-                                <div class="price">&#8377;100 <span>&#8377;110</span></div>
-                                <div class="cartqt">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn" />
-                                        <input type="number" name="quantity" value="1" class="qty-text" />
-                                        <input type="button" value="+" class="plus plus-btn" />
-                                    </div>
-                                    <div class="ct-icon">
-                                        <i class="uil uil-shopping-cart-alt"></i>
+                                </a>
+                                <div class="product-detail">
+                                    <p>Available (In Stock)</p>
+                                    <h4>Product Tittle</h4>
+                                    <div class="price">&#8377;100 <span>&#8377;110</span></div>
+                                    <div class="cartqt">
+                                        <div class="quantity buttons_added">
+                                            <input type="button" value="-" class="minus minus-btn" />
+                                            <input type="number" name="quantity" value="1" class="qty-text" />
+                                            <input type="button" value="+" class="plus plus-btn" />
+                                        </div>
+                                        <div class="ct-icon">
+                                            <i class="uil uil-shopping-cart-alt"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="productBox">
-                            <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
-                                <div class="topOption">
-                                    <span class="offer">10% off</span>
-                                    <span class="wishlist">
-                                        <i class="uil uil-heart"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <div class="product-detail">
-                                <p>Available (In Stock)</p>
-                                <h4>Product Tittle</h4>
-                                <div class="price">&#8377;100 <span>&#8377;110</span></div>
-                                <div class="cartqt">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn" />
-                                        <input type="number" name="quantity" value="1" class="qty-text" />
-                                        <input type="button" value="+" class="plus plus-btn" />
-                                    </div>
-                                    <div class="ct-icon">
-                                        <i class="uil uil-shopping-cart-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="productBox">
-                            <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
-                                <div class="topOption">
-                                    <span class="offer">10% off</span>
-                                    <span class="wishlist">
-                                        <i class="uil uil-heart"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <div class="product-detail">
-                                <p>Available (In Stock)</p>
-                                <h4>Product Tittle</h4>
-                                <div class="price">&#8377;100 <span>&#8377;110</span></div>
-                                <div class="cartqt">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn" />
-                                        <input type="number" name="quantity" value="1" class="qty-text" />
-                                        <input type="button" value="+" class="plus plus-btn" />
-                                    </div>
-                                    <div class="ct-icon">
-                                        <i class="uil uil-shopping-cart-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="productBox">
-                            <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
-                                <div class="topOption">
-                                    <span class="offer">10% off</span>
-                                    <span class="wishlist">
-                                        <i class="uil uil-heart"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <div class="product-detail">
-                                <p>Available (In Stock)</p>
-                                <h4>Product Tittle</h4>
-                                <div class="price">&#8377;100 <span>&#8377;110</span></div>
-                                <div class="cartqt">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn" />
-                                        <input type="number" name="quantity" value="1" class="qty-text" />
-                                        <input type="button" value="+" class="plus plus-btn" />
-                                    </div>
-                                    <div class="ct-icon">
-                                        <i class="uil uil-shopping-cart-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endfor
                 </div>
             </div>
         </div>
