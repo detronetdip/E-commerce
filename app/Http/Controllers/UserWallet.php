@@ -10,6 +10,6 @@ class UserWallet extends Controller
     {
         $title="My Wallet";
         $data=compact('title');
-        return view('myprofile')->with($data);
+        return view('mywallet')->with($data);
     }
 }
