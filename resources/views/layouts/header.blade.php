@@ -124,22 +124,23 @@
                         <div class="userpanel fadeup" id="userpanel">
                             <ul>
                                 <li>
-                                    <i class="uil uil-chat-bubble-user"></i><a href="myorders.html">My Account</a>
+                                    <i class="uil uil-chat-bubble-user"></i><a href="{{ url('/user/profile') }}">My
+                                        Account</a>
                                 </li>
                                 <li>
-                                    <i class="uil uil-box"></i><a href="myorders.html">My Orders</a>
+                                    <i class="uil uil-box"></i><a href="{{ url('/user/profile') }}">My Orders</a>
                                 </li>
                                 <li>
-                                    <i class="uil uil-heart-alt"></i><a href="wishlist.html">My Wishlist</a>
+                                    <i class="uil uil-heart-alt"></i><a href="{{ url('/user/wishlist') }}">My Wishlist</a>
                                 </li>
                                 <li>
-                                    <i class="uil uil-shopping-cart"></i><a href="cart.html">My Cart</a>
+                                    <i class="uil uil-shopping-cart"></i><a href="{{ url('/user/cart') }}">My Cart</a>
                                 </li>
                                 <li>
-                                    <i class="uil uil-wallet"></i><a href="mywallet.html">My Wallet</a>
+                                    <i class="uil uil-wallet"></i><a href="{{ url('/user/wallet') }}">My Wallet</a>
                                 </li>
                                 <li>
-                                    <i class="uil uil-map-marker-alt"></i><a href="address.html">My Address</a>
+                                    <i class="uil uil-map-marker-alt"></i><a href="{{ url('/user/address') }}">My Address</a>
                                 </li>
                                 <li><i class="uil uil-signin"></i><a href="">Login</a></li>
                                 <li>
@@ -176,10 +177,13 @@
                     </div>
                 @endfor
             </nav>
-            <div class="cart-right">
-                <a href="cart.html" style="text-decoration: none; color: #fff"><i
-                        class="uil uil-shopping-cart-alt"></i>Cart</a>
-            </div>
+
+            <a href="{{url("/user/cart")}}" style="text-decoration: none; color: #fff" class="cart-right">
+                <div class="cart-right" style="padding: 0;">
+
+                    <i class="uil uil-shopping-cart-alt"></i> Cart
+                </div>
+            </a>
             <div class="srch" onclick="openrss()">
                 <i class="uil uil-search"></i>
             </div>

@@ -3,7 +3,7 @@
 @section('page')
     <div class="path">
         <div class="container">
-            <a href="index.html">Home</a>
+            <a href="{{ url('/') }}">Home</a>
             /
             <a href="index.html">cat1</a>
             /
@@ -17,20 +17,24 @@
                 <div class="innerrow">
                     <div class="left">
                         <div class="mainImage">
-                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" id="mi" />
+                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt="" id="mi" />
                         </div>
                         <div class="subimages flex">
                             <div class="sub">
-                                <img src="{{ asset('assets/user/images/product/big-2.jpg')}}" alt="" onclick="view(this)" />
+                                <img src="{{ asset('assets/user/images/product/big-2.jpg') }}" alt=""
+                                    onclick="view(this)" />
                             </div>
                             <div class="sub">
-                                <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" onclick="view(this)" />
+                                <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt=""
+                                    onclick="view(this)" />
                             </div>
                             <div class="sub">
-                                <img src="{{ asset('assets/user/images/product/big-3.jpg')}}" alt="" onclick="view(this)" />
+                                <img src="{{ asset('assets/user/images/product/big-3.jpg') }}" alt=""
+                                    onclick="view(this)" />
                             </div>
                             <div class="sub">
-                                <img src="{{ asset('assets/user/images/product/big-4.jpg')}}" alt="" onclick="view(this)" />
+                                <img src="{{ asset('assets/user/images/product/big-4.jpg') }}" alt=""
+                                    onclick="view(this)" />
                             </div>
                         </div>
                     </div>
@@ -130,7 +134,7 @@
                                 <div class="product-container">
                                     <div class="card">
                                         <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt="" />
                                         </a>
                                         <div class="detail">
                                             <h4>Product tittle here</h4>
@@ -149,7 +153,7 @@
                                     </div>
                                     <div class="card">
                                         <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}" alt="" />
                                         </a>
                                         <div class="detail">
                                             <h4>Product tittle here</h4>
@@ -168,7 +172,8 @@
                                     </div>
                                     <div class="card">
                                         <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
+                                                alt="" />
                                         </a>
                                         <div class="detail">
                                             <h4>Product tittle here</h4>
@@ -187,7 +192,8 @@
                                     </div>
                                     <div class="card">
                                         <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
+                                                alt="" />
                                         </a>
                                         <div class="detail">
                                             <h4>Product tittle here</h4>
@@ -206,7 +212,8 @@
                                     </div>
                                     <div class="card">
                                         <a href="">
-                                            <img src="{{ asset('assets/user/images/product/big-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/user/images/product/big-1.jpg') }}"
+                                                alt="" />
                                         </a>
                                         <div class="detail">
                                             <h4>Product tittle here</h4>
@@ -303,7 +310,7 @@
                     <div class="item">
                         <div class="productBox">
                             <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-1.jpg')}}" alt="product" />
+                                <img src="{{ asset('assets/user/images/sample/img-1.jpg') }}" alt="product" />
                                 <div class="topOption">
                                     <span class="offer">10% off</span>
                                     <span class="wishlist">
@@ -331,7 +338,7 @@
                     <div class="item">
                         <div class="productBox">
                             <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-2.jpg')}}" alt="product" />
+                                <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                 <div class="topOption">
                                     <span class="offer">10% off</span>
                                     <span class="wishlist">
@@ -359,7 +366,7 @@
                     <div class="item">
                         <div class="productBox">
                             <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-3.jpg')}}" alt="product" />
+                                <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                 <div class="topOption">
                                     <span class="offer">10% off</span>
                                     <span class="wishlist">
@@ -387,7 +394,7 @@
                     <div class="item">
                         <div class="productBox">
                             <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-2.jpg')}}" alt="product" />
+                                <img src="{{ asset('assets/user/images/sample/img-2.jpg') }}" alt="product" />
                                 <div class="topOption">
                                     <span class="offer">10% off</span>
                                     <span class="wishlist">
@@ -415,7 +422,7 @@
                     <div class="item">
                         <div class="productBox">
                             <a href="" class="product-image">
-                                <img src="{{ asset('assets/user/images/sample/img-3.jpg')}}" alt="product" />
+                                <img src="{{ asset('assets/user/images/sample/img-3.jpg') }}" alt="product" />
                                 <div class="topOption">
                                     <span class="offer">10% off</span>
                                     <span class="wishlist">
