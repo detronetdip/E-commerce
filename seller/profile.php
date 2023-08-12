@@ -15,7 +15,7 @@ $bal = $r['ballance'];
       <div class="card-body">
         <div class="media align-items-center">
           <div class="media-body mr-3">
-            <h2 class="num-text text-black font-w700">&#8377;<?php echo $bal; ?></h2>
+            <h2 class="num-text text-black font-w700">&#8358;<?php echo $bal; ?></h2>
             <br /><br />
             <span class="badge orange">Wallet Balance</span>
             <br /><br /><br />

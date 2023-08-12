@@ -24,7 +24,7 @@ $sr = mysqli_query($con, "select * from seller_w_msg where s_id='$sid'");
           <img src="../assets/images/money.svg" alt="">
         </div>
         <span class="rewrd-title">My Balance</span>
-        <h4 class="cashbk-price">&#8377;<?php echo $r['ballance']; ?></h4>
+        <h4 class="cashbk-price">&#8358;<?php echo $r['ballance']; ?></h4>
         <button class='btn btn-main' onclick="control.redirect('witdraw.php')">Witdraw</button>
       </div>
       <div class="pdpt-bg">
@@ -64,7 +64,7 @@ $sr = mysqli_query($con, "select * from seller_w_msg where s_id='$sid'");
                       } else {
                         echo "-";
                       }
-                      echo "&#8377;" . $row['balance'];
+                      echo "&#8358;" . $row['balance'];
                       ?>
 
                     </span>

@@ -78,7 +78,7 @@ require('require/top.php');
                         </div>
                         <div class="p_status">
                             <span>
-                                &#8377;
+                                &#8358;
                                 <?php
                                 $u_id = $row['id'];
                                 $ro = mysqli_fetch_assoc(mysqli_query($con, "select * from user_wallet where user_id='$u_id'"));

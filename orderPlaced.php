@@ -63,7 +63,7 @@ if (isset($_POST['orderId_user'])) {
               if ($row['payment_type'] == 1) {
               ?>
                 <div class="placed-bottom-dt">
-                  The payment of <span>&#8377;<?php echo $row['final_val'] ?></span> you'll make when the deliver
+                  The payment of <span>&#8358;<?php echo $row['final_val'] ?></span> you'll make when the deliver
                   arrives with your order.
                 </div>
               <?php } ?>

@@ -16,7 +16,7 @@ $r1 = mysqli_query($con, $q1);
     <div class="headrow">
         <div class="wrap">
             <div class="detail" style="float: right">
-                <h3>Wallet Balance: &#8377;<span style="color:#6a7187;">
+                <h3>Wallet Balance: &#8358;<span style="color:#6a7187;">
                         <?php
                         $y = mysqli_fetch_assoc(mysqli_query($con, "select * from seller_wallet where seller_id='$id'"));
                         $r = $y['ballance'];
@@ -50,7 +50,7 @@ $r1 = mysqli_query($con, $q1);
                                 <?php echo $roww['msg'] ?>
                             </td>
                             <td style="padding: 1rem 0.8rem;border-bottom:1px solid #e2e2e2;font-size:1.4rem;">
-                                &#8377;<?php echo $roww['balance'] ?>
+                                &#8358;<?php echo $roww['balance'] ?>
                                 ( <?php
                                     if ($roww['cod'] == 1) {
                                         echo "+";
