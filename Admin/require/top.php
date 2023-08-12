@@ -29,7 +29,7 @@ if (!isset($_SESSION['IS_LOGIN_ADMIN'])) {
             <div class="updatebalance" id="updatebalance">
                 <div class="row">
                     <h1>Current Balence:</h1>
-                    <h3>&#8377;1700</h3>
+                    <h3>&#8358;1700</h3>
                 </div>
                 <div class="row2">
                     <input type="number" placeholder="Enter Updated Balence" />
@@ -73,7 +73,7 @@ if (!isset($_SESSION['IS_LOGIN_ADMIN'])) {
                                 Price:
 
                                 <span class="tag">
-                                    &#8377;1700 |&nbsp;<em class="crs">&#8377;100</em>
+                                    &#8358;1700 |&nbsp;<em class="crs">&#8358;100</em>
                                 </span>
                             </span>
                         </div>

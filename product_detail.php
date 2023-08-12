@@ -53,12 +53,12 @@ $product = product_detail($con, $pid);
                         <ul>
                             <li>
                                 <div class="main-price color-discount">
-                                    Discount Price<span>&#8377;<?php echo $product['fa']; ?></span>
+                                    Discount Price<span>&#8358;<?php echo $product['fa']; ?></span>
                                 </div>
                             </li>
                             <li>
                                 <div class="main-price mrp-price">
-                                    MRP Price<span>&#8377;<?php echo $product['price']; ?></span>
+                                    MRP Price<span>&#8358;<?php echo $product['price']; ?></span>
                                 </div>
                             </li>
                         </ul>
@@ -272,8 +272,8 @@ $product = product_detail($con, $pid);
                                                 <h4><?php echo $row['product_name']; ?></h4>
                                                 <div class="qty-group">
                                                     <div class="cart-item-price">
-                                                        &#8377;<?php echo $row['fa']; ?>
-                                                        <span>&#8377;<?php echo $row['price']; ?></span>
+                                                        &#8358;<?php echo $row['fa']; ?>
+                                                        <span>&#8358;<?php echo $row['price']; ?></span>
                                                     </div>
                                                 </div>
                                             </div>

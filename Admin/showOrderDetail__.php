@@ -83,10 +83,10 @@ $sellerInfo = array();
                                                             <div class="order-dt47">
                                                                 <h4>Price</h4>
                                                                 <div class="order-title">
-                                                                    &#8377;<?php echo $rw['qty'] * $rw['fa']; ?>
+                                                                    &#8358;<?php echo $rw['qty'] * $rw['fa']; ?>
                                                                 </div>
                                                                 <div class="order-title">
-                                                                    &#8377;<?php echo $rw['delivered_qty'] * $rw['fa']; ?>
+                                                                    &#8358;<?php echo $rw['delivered_qty'] * $rw['fa']; ?>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -100,11 +100,11 @@ $sellerInfo = array();
                                                     <div class="total-checkout-group">
                                                         <div class="cart-total-dil">
                                                             <h4>Sub Total</h4>
-                                                            <span>&#8377;<?php echo $row['total_amt']; ?></span>
+                                                            <span>&#8358;<?php echo $row['total_amt']; ?></span>
                                                         </div>
                                                         <div class="cart-total-dil pt-3">
                                                             <h4>Delivery Charges</h4>
-                                                            <span>&#8377;<?php echo $row['ship_fee_order']; ?></span>
+                                                            <span>&#8358;<?php echo $row['ship_fee_order']; ?></span>
                                                         </div>
                                                         <div class="cart-total-dil pt-3">
                                                             <h4>Payment Mode</h4>
@@ -119,11 +119,11 @@ $sellerInfo = array();
                                                     </div>
                                                     <div class="main-total-cart">
                                                         <h2>Total</h2>
-                                                        <span>&#8377;<?php echo $row['final_val']; ?></span>
+                                                        <span>&#8358;<?php echo $row['final_val']; ?></span>
                                                     </div>
                                                     <div class="main-total-cart">
                                                         <h2>User Paid</h2>
-                                                        <span>&#8377;<?php echo $row['final_val']; ?></span>
+                                                        <span>&#8358;<?php echo $row['final_val']; ?></span>
                                                     </div>
                                                     <?php
                                                     if ($row['payment_type'] == 2 && ($totalOrderedPricePerSeller - $totalReceivedPricePerSeller) > 0) {

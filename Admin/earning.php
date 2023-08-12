@@ -23,7 +23,7 @@ require('require/top.php');
             </div>
             <div class="rest">
                 <h4>Total Revenue</h4>
-                <h3 id="t">&#8377;<?php echo get_total_revenew($con); ?></h3>
+                <h3 id="t">&#8358;<?php echo get_total_revenew($con); ?></h3>
             </div>
         </div>
         <div class="card">

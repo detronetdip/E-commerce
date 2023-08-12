@@ -53,10 +53,10 @@ if (isset($_GET['n'])  && !isset($_GET['scat']) && !isset($_GET['filter']) && !i
                             <input type="range" name="price" id="price-input" min="1" max="1000" value="1000" oninput="getprice()" style="accent-color:#f55d2c;border:none">
                             <div class="inrow" style="margin-top: 1.5rem;">
                                 <div class="in">
-                                    <h4>&#8377;0</h4>
+                                    <h4>&#8358;0</h4>
                                 </div>
                                 <div class="in">
-                                    <h4>&#8377;<span id="fnlp">1000</span></h4>
+                                    <h4>&#8358;<span id="fnlp">1000</span></h4>
                                 </div>
                                 <div class="in">
                                     <h4 class="underline" onclick="filterPrice()" style="cursor:pointer">filter</h4>
@@ -156,7 +156,7 @@ if (isset($_GET['n'])  && !isset($_GET['scat']) && !isset($_GET['filter']) && !i
                                         <h4>
                                             <a href="product_detail.php?pid=<?php echo ($product['id']); ?>&type='detail'&show='2'"><?php echo $product['product_name'] ?></a>
                                         </h4>
-                                        <p class="price">&#8377;<span class="ftrp"><?php echo $product['fa'] ?></span></p>
+                                        <p class="price">&#8358;<span class="ftrp"><?php echo $product['fa'] ?></span></p>
                                     </div>
                                 </div>
                         <?php

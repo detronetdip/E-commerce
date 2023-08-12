@@ -85,7 +85,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                                         <?php echo $p['qty']; ?>
                                     </td>
                                     <td style="padding: 1rem 0.8rem;border-bottom:1px solid  #e2e2e2;text-align:center;font-size:1.4rem;">
-                                        &#8377; <?php $o = $p['qty'] * $p['fa'];
+                                        &#8358; <?php $o = $p['qty'] * $p['fa'];
                                                 echo $o; ?>
                                     </td>
                                     <td style="padding: 1rem 0.8rem;border-bottom:1px solid  #e2e2e2;text-align:center;font-size:1.4rem;">
@@ -98,7 +98,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                                         <?php echo $p['ship_name']; ?>
                                     </td>
                                     <td style="padding: 1rem 0.8rem;border-bottom:1px solid  #e2e2e2;text-align:center;font-size:1.4rem;">
-                                        &#8377; <?php
+                                        &#8358; <?php
                                                 echo ($p['commission'] * $o) / 100;
                                                 $total_com += ($p['commission'] * $o) / 100;
                                                 ?>
@@ -194,7 +194,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                     </tr>
                     <tr>
                         <td style="padding: 1rem 0.8rem;font-size:1.5rem;">Total Price: </td>
-                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8377; <?php echo $tp; ?></td>
+                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8358; <?php echo $tp; ?></td>
                     </tr>
                     <tr>
                         <td style="padding: 1rem 0.8rem;font-size:1.5rem;">Discount: </td>
@@ -207,7 +207,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                     </tr>
                     <tr>
                         <td style="padding: 1rem 0.8rem;font-size:1.5rem;">Grand Total: </td>
-                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8377; <?php echo $rw['total_price']; ?>
+                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8358; <?php echo $rw['total_price']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -224,7 +224,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                     </tr>
                     <tr>
                         <td style="padding: 1rem 0.8rem;font-size:1.5rem;">Total Commission: </td>
-                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8377;<?php echo $total_com; ?></td>
+                        <td style="padding: 1rem 0.8rem;font-size:1.5rem;"> &#8358;<?php echo $total_com; ?></td>
                     </tr>
                     <?php
                     $h = 1;
@@ -253,10 +253,10 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                             <tr>
                                 <td style="padding: 1rem 0.8rem;font-size:1.5rem;">Product <?php echo $h; ?>: </td>
                                 <td style="padding: 1rem 0.8rem;font-size:1.5rem;"><?php
-                                                                                    echo "Expected Payment: &#8377;" . $payable[$h];
+                                                                                    echo "Expected Payment: &#8358;" . $payable[$h];
                                                                                     ?></td>
                                 <td style="padding: 1rem 0.8rem;font-size:1.5rem;"><?php
-                                                                                    echo "Paid: &#8377;" . $payable2[$h];
+                                                                                    echo "Paid: &#8358;" . $payable2[$h];
                                                                                     ?></td>
                             </tr>
                     <?php }

@@ -154,8 +154,8 @@ if (isset($_GET['utm_source']) || isset($_SESSION['utm_source'])) {
                                                 echo "Unavailable(Out of Stock)";
                                             } ?></p>
                                         <h4 style="cursor:pointer" onclick="control.redirect('product_detail.php?pid=<?php echo $product['id'] ?>')"><?php echo $product['product_name']; ?></h4>
-                                        <div class="price">&#8377;<?php echo $product['fa']; ?>
-                                            <span>&#8377;<?php echo $product['price']; ?></span>
+                                        <div class="price">&#8358;<?php echo $product['fa']; ?>
+                                            <span>&#8358;<?php echo $product['price']; ?></span>
                                         </div>
                                         <div class="cartqt">
                                             <?php
@@ -332,8 +332,8 @@ if (isset($_GET['utm_source']) || isset($_SESSION['utm_source'])) {
                                                 echo "Unavailable(Out of Stock)";
                                             } ?></p>
                                         <h4 style="cursor:pointer" onclick="control.redirect('product_detail.php?pid=<?php echo $product['id'] ?>')"><?php echo $product['product_name']; ?></h4>
-                                        <div class="price">&#8377;<?php echo $product['fa']; ?>
-                                            <span>&#8377;<?php echo $product['price']; ?></span>
+                                        <div class="price">&#8358;<?php echo $product['fa']; ?>
+                                            <span>&#8358;<?php echo $product['price']; ?></span>
                                         </div>
                                         <div class="cartqt">
                                             <?php
@@ -478,8 +478,8 @@ if (isset($_GET['utm_source']) || isset($_SESSION['utm_source'])) {
                                                 echo "Unavailable(Out of Stock)";
                                             } ?></p>
                                         <h4 style="cursor:pointer" onclick="control.redirect('product_detail.php?pid=<?php echo $product['id'] ?>')"><?php echo $product['product_name']; ?></h4>
-                                        <div class="price">&#8377;<?php echo $product['fa']; ?>
-                                            <span>&#8377;<?php echo $product['price']; ?></span>
+                                        <div class="price">&#8358;<?php echo $product['fa']; ?>
+                                            <span>&#8358;<?php echo $product['price']; ?></span>
                                         </div>
                                         <div class="cartqt">
                                             <?php

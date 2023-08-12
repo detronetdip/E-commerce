@@ -38,7 +38,7 @@ authorise_user2();
                   </div>
                   <div class="cart-text">
                     <h4><?php echo $row['product_name'] ?></h4>
-                    <div class="cart-item-price">&#8377;<?php echo $row['fa']; ?> <span>&#8377;<?php echo $row['price']; ?></span></div>
+                    <div class="cart-item-price">&#8358;<?php echo $row['fa']; ?> <span>&#8358;<?php echo $row['price']; ?></span></div>
                     <button type="button" class="cart-close-btn" onclick="del_wish(<?php echo $row['id']; ?>)">
                       <i class="uil uil-trash-alt"></i>
                     </button>
