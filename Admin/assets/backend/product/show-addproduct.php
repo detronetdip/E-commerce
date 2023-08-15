@@ -81,7 +81,7 @@
      <span class="price">
        Price:
        <span class="tag">
-         &#8358; '.$sellprice.' |&nbsp; <em class="crs">&#8358; '.$price.'</em>
+         &#8377; '.$sellprice.' |&nbsp; <em class="crs">&#8377; '.$price.'</em>
        </span>
      </span>
    </div>

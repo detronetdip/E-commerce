@@ -219,10 +219,10 @@ $subtotal = 0;
                             </div>
                             <div class="cart-text">
                                 <h4><?php echo $product['product_name']; ?></h4>
-                                <div class="cart-item-price">&#8358;<?php echo $product['fa'];
+                                <div class="cart-item-price">&#8377;<?php echo $product['fa'];
                                                                     $subtotal += $product['fa'] * $product['qty'];
                                                                     ?>
-                                    <span>&#8358;<?php echo $product['price']; ?></span>
+                                    <span>&#8377;<?php echo $product['price']; ?></span>
                                 </div>
                                 <br>
                                 <div class="cart-item-price">
@@ -234,11 +234,11 @@ $subtotal = 0;
                     <div class="total-checkout-group">
                         <div class="cart-total-dil">
                             <h4>Subtotal</h4>
-                            <span>&#8358;<?php echo $product['total']; ?></span>
+                            <span>&#8377;<?php echo $product['total']; ?></span>
                         </div>
                         <div class="cart-total-dil pt-3">
                             <h4>Delivery Charges</h4>
-                            <span>&#8358;<?php
+                            <span>&#8377;<?php
                                             echo $product['ship_fee'];
                                             ?></span>
                         </div>
@@ -247,7 +247,7 @@ $subtotal = 0;
                         ?>
                             <div class="cart-total-dil pt-3">
                                 <h4>Promo Applied</h4>
-                                <span>- &#8358;<?php
+                                <span>- &#8377;<?php
                                                 echo $product['promo'];
                                                 ?></span>
                             </div>
@@ -257,7 +257,7 @@ $subtotal = 0;
                         ?>
                             <div class="cart-total-dil pt-3">
                                 <h4>From Wallet</h4>
-                                <span>- &#8358;<?php
+                                <span>- &#8377;<?php
                                                 echo $product['wl_amt'];
                                                 ?></span>
                             </div>
@@ -265,7 +265,7 @@ $subtotal = 0;
                     </div>
                     <div class="main-total-cart">
                         <h2>Total</h2>
-                        <span>&#8358;<?php echo $product['final_amt']; ?></span>
+                        <span>&#8377;<?php echo $product['final_amt']; ?></span>
                     </div>
                     <div class="cktout">
                         <i class="uil uil-padlock"></i> Secure Checkout

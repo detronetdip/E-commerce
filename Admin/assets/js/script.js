@@ -2145,7 +2145,7 @@ function earning_search() {
         let htl = JSON.parse(html);
         control.html("ttlod", htl.to);
         control.html("scod", htl.so);
-        control.html("t", "&#8358; " + htl.t);
+        control.html("t", "&#8377; " + htl.t);
         control.html("uscod", htl.to - htl.so);
         control.html("btn", "Search");
       },

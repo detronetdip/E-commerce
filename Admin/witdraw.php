@@ -37,9 +37,9 @@ while ($w = mysqli_fetch_assoc($h)) {
                         <div class="slno"><?php echo $i; ?></div>
                         <div class="p_name"><?php echo $row['f_name']; ?></div>
                         <div class="p_status">
-                            &#8358; <?php echo $row['amount_w']; ?>
+                            &#8377; <?php echo $row['amount_w']; ?>
                         </div>
-                        <div class="date">&#8358; <?php echo $row['amount_r']; ?></div>
+                        <div class="date">&#8377; <?php echo $row['amount_r']; ?></div>
                         <div class="p_action" style="width: 7rem">
                             <button class="edit" onclick="redirect_to('seller_detail.php?sid=<?php echo $row['s_id']; ?>&req=1')">
                                 <i class="fa fa-wifi" aria-hidden="true"></i>View

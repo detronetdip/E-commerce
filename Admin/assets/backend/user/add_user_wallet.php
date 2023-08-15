@@ -12,7 +12,7 @@ $current=$row['balance'];
  mysqli_query($con,"update user_wallet set balance='$now' where uid='$uid'");
  mysqli_query($con,"update order_detail set auw='1' where id='$id'");
  $date=date("y-m-d");
-$msg=" &#8358;".$value." Credited";
+$msg=" &#8377;".$value." Credited";
  mysqli_query($con,"insert into wallet_msg_user(uid,date,msg,ballance,isnew) values ('$uid','$date','$msg','$now','1')");
  $n=mysqli_num_rows(mysqli_query($con,"select * from reforrep where oid='$id'"));
  if($n>0){
