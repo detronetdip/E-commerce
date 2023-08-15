@@ -45,7 +45,7 @@ require('require/top.php');
             </div>
         </div>
         <?php
-        $query2 = "select state.*,country.cntry_name from state,country order by id desc";
+        $query2 = "SELECT s.*, c.cntry_name FROM state AS s JOIN country AS c ON s.c_id = c.id ORDER BY s.id DESC;";
         $res2 = mysqli_query($con, $query2);
         $i = 1;
         while ($rowt = mysqli_fetch_assoc($res2)) {
