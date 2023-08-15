@@ -56,12 +56,12 @@ $product = product_detail($con, $product_id);
                                 <ul>
                                     <li>
                                         <div class="main-price color-discount">
-                                            Discount Price<span>&#8358;<?php echo $product['fa']; ?></span>
+                                            Discount Price<span>&#8377;<?php echo $product['fa']; ?></span>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="main-price mrp-price">
-                                            MRP Price<span>&#8358;<?php echo $product['price']; ?></span>
+                                            MRP Price<span>&#8377;<?php echo $product['price']; ?></span>
                                         </div>
                                     </li>
                                 </ul>

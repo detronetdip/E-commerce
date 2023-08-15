@@ -80,7 +80,7 @@ $is_gst = $row['is_gst'];
         </div>
         <div class="wrap">
             <div class="detail" style="margin-bottom:4rem">
-                <h3>Wallet Balance: &#8358;<span><?php echo $wb; ?></span></h3>
+                <h3>Wallet Balance: &#8377;<span><?php echo $wb; ?></span></h3>
                 <a style="font-size:1.3rem; color:#40464d; text-decoration:underline" href="manual_update.php?sid=<?php echo $_GET['sid'] ?>">Manual Update</a>
                 &nbsp;
                 <a style="font-size:1.3rem; color:#40464d; text-decoration:underline" href="view_seller_wallet_history.php?sid=<?php echo $_GET['sid'] ?>">View Wallet History</a>
@@ -90,7 +90,7 @@ $is_gst = $row['is_gst'];
                 $o = mysqli_fetch_assoc(mysqli_query($con, "select * from witdraw_req where s_id='$id'"));
             ?>
                 <div class="detail" style="margin-bottom:4rem">
-                    <h3>Requested: &#8358;<span><?php echo $o['amount_r']; ?></span></h3>
+                    <h3>Requested: &#8377;<span><?php echo $o['amount_r']; ?></span></h3>
                     <button style="background:#556ee6;color:#fff; padding:0.8rem; border-radius:5px" onclick="redirect_to('txn.php?sid=<?php echo $id;  ?>')">Approve Request</button>
                     <button style="background:#556ee6;color:#fff; padding:0.8rem; border-radius:5px" onclick="reject_req(<?php echo $id;  ?>)">Reject</button>
                 </div>

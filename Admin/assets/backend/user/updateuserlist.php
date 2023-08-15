@@ -43,7 +43,7 @@ $cb="";
       $template=$template.'</div>
       <div class="p_status">
           <span>
-          &#8358;';
+          &#8377;';
              $u_id=$row['id'];
               $ro=mysqli_fetch_assoc(mysqli_query($con,"select * from user_wallet where user_id='$u_id'"));
               $template=$template.$ro['ballance'];

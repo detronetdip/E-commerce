@@ -62,7 +62,7 @@ $total_subtotal = 0;
                                                 </td>
                                                 <td>
                                                     <div class="price">
-                                                        <h6>&#8358;<?php echo $product['fa'] ?></h6>
+                                                        <h6>&#8377;<?php echo $product['fa'] ?></h6>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -78,7 +78,7 @@ $total_subtotal = 0;
                                                 </td>
                                                 <td>
                                                     <div class="price">
-                                                        <h6>&#8358;<?php
+                                                        <h6>&#8377;<?php
                                                                     $sftp = $p_qy * $product['fa'];
                                                                     $total_subtotal += $sftp;
                                                                     echo $sftp;
@@ -114,7 +114,7 @@ $total_subtotal = 0;
                                         <h6>Subtotal</h6>
                                     </td>
                                     <td>
-                                        <h6>&#8358;<?php echo $total_subtotal; ?></h6>
+                                        <h6>&#8377;<?php echo $total_subtotal; ?></h6>
                                     </td>
                                 </tr>
                             </table>
@@ -139,7 +139,7 @@ $total_subtotal = 0;
                                             <h6>Subtotal</h6>
                                         </td>
                                         <td>
-                                            <h6>&#8358;<?php echo $ct['total']; ?></h6>
+                                            <h6>&#8377;<?php echo $ct['total']; ?></h6>
                                         </td>
                                     </tr>
                                     <tr>
@@ -147,7 +147,7 @@ $total_subtotal = 0;
                                             <h6>Shipping</h6>
                                         </td>
                                         <td>
-                                            <h6>&#8358;
+                                            <h6>&#8377;
                                                 <?php
                                                 echo $ct['ship_fee'];
                                                 ?></h6>
@@ -161,7 +161,7 @@ $total_subtotal = 0;
                                                 <h6>Promo</h6>
                                             </td>
                                             <td>
-                                                <h6>-&#8358;
+                                                <h6>-&#8377;
                                                     <?php
                                                     echo $ct['promo'];
                                                     ?></h6>
@@ -176,7 +176,7 @@ $total_subtotal = 0;
                                                 <h6>From Wallet</h6>
                                             </td>
                                             <td>
-                                                <h6>-&#8358;
+                                                <h6>-&#8377;
                                                     <?php
                                                     echo $ct['wl_amt'];
                                                     ?></h6>
@@ -190,7 +190,7 @@ $total_subtotal = 0;
                                             <h6>Grand Total</h6>
                                         </td>
                                         <td>
-                                            <h6>&#8358;<?php echo $ct['final_amt']; ?></h6>
+                                            <h6>&#8377;<?php echo $ct['final_amt']; ?></h6>
                                         </td>
                                     </tr>
                                 </table>

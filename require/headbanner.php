@@ -13,6 +13,6 @@ $userData=mysqli_fetch_assoc(mysqli_query($con,"select users.*,user_wallet.balla
     </p>
     <div class="earn-points">
         <img src="assets/images/Dollar.svg" alt="" />Ballance :
-        <span>&#8358;<?php echo $userData['ballance'] ?></span>
+        <span>&#8377;<?php echo $userData['ballance'] ?></span>
     </div>
 </div>

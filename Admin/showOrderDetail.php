@@ -102,11 +102,11 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                                                     <div class="total-checkout-group">
                                                         <div class="cart-total-dil">
                                                             <h4>Sub Total</h4>
-                                                            <span>&#8358;<?php echo $row['total_amt']; ?></span>
+                                                            <span>&#8377;<?php echo $row['total_amt']; ?></span>
                                                         </div>
                                                         <div class="cart-total-dil pt-3">
                                                             <h4>Delivery Charges</h4>
-                                                            <span>&#8358;<?php echo $row['ship_fee_order']; ?></span>
+                                                            <span>&#8377;<?php echo $row['ship_fee_order']; ?></span>
                                                         </div>
                                                         <?php
 
@@ -114,7 +114,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                                                         ?>
                                                             <div class="cart-total-dil pt-3">
                                                                 <h4>From Promo</h4>
-                                                                <span>-&#8358;<?php echo $row['prmo']; ?></span>
+                                                                <span>-&#8377;<?php echo $row['prmo']; ?></span>
                                                             </div>
                                                         <?php
                                                         }
@@ -123,7 +123,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
 
                                                             <div class="cart-total-dil pt-3">
                                                                 <h4>From Wallet</h4>
-                                                                <span>-&#8358;<?php echo $row['wlmt']; ?></span>
+                                                                <span>-&#8377;<?php echo $row['wlmt']; ?></span>
                                                             </div>
 
                                                         <?php
@@ -134,7 +134,7 @@ while ($rt = mysqli_fetch_assoc($rs)) {
                                                     </div>
                                                     <div class="main-total-cart">
                                                         <h2>Total</h2>
-                                                        <span>&#8358;<?php echo $row['final_val']; ?></span>
+                                                        <span>&#8377;<?php echo $row['final_val']; ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="call-bill">
