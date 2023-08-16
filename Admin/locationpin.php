@@ -57,7 +57,13 @@ require('require/top.php');
             </div>
         </div>
         <?php
-        $query2 = "select pin.*,city.city_name,state.state_name,country.cntry_name from pin,city,state,country where pin.c_id=city.id and city.s_id=state.id and state.c_id=country.id order by pin.id desc";
+        $query2 = "SELECT p.*, ci.city_name, s.state_name, co.cntry_name
+                    FROM pin AS p
+                    JOIN city AS ci ON p.c_id = ci.id
+                    JOIN state AS s ON ci.s_id = s.id
+                    JOIN country AS co ON s.c_id = co.id
+                    ORDER BY p.id DESC;
+                    ";
         $res2 = mysqli_query($con, $query2);
         $i = 1;
         while ($rowt = mysqli_fetch_assoc($res2)) {
