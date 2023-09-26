@@ -11,8 +11,8 @@ $key = $_POST["key"];
 $productinfo = $_POST["productinfo"];
 $email = $_POST["email"];
 
-$MERCHANT_KEY = "***REMOVED***";
-$SALT = "***REMOVED***";
+$MERCHANT_KEY = "merchant key";
+$SALT = "salt key";
 $udf5 = '';
 $keyString 	= $MERCHANT_KEY . '|' . $txnid . '|' . $amount . '|' . $productinfo . '|' . $firstname . '|' . $email . '|||||' . $udf5 . '|||||';
 $keyArray 	= explode("|", $keyString);

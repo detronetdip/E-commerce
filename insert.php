@@ -6,8 +6,8 @@ if (isset($_POST['orderId_user'])) {
   $query = "select orders.txnid,orders.o_id,orders.final_val,user_address.user_name,user_address.user_mobile,users.email from orders,user_address,users where orders.id='$order_id' and orders.ad_id=user_address.id and orders.u_id=users.id";
   $row = mysqli_fetch_assoc(mysqli_query($con, $query));
 }
-$MERCHANT_KEY = "***REMOVED***";
-$SALT = "***REMOVED***";
+$MERCHANT_KEY = "merchant key";
+$SALT = "salt key";
 
 $txnid = $row['txnid'];
 $name = $row['user_name'];
