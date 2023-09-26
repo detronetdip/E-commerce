@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <h4 align="center"><i>Build with ❤️  and</i></h4>
+  <h4 align="center"><i>Build with ❤️ and</i></h4>
 </p>
 <p align="center"> 
     <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?&logo=html5&logoColor=white"/>&nbsp;
@@ -33,7 +33,7 @@
 
 ### How to run
 
-  You can run this project by manually setting up everything or you can simply run it with docker or docker-compose to avoid overhead hustles.
+  You can run this project by manually setting up everything or you can simply run it with docker or docker-compose to avoid overhead hustles
 
 ### Run with docker
 
