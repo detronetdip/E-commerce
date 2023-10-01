@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_E_commerce_1696175972782-pr-trigger-input-set
+  identifier: Build_E_commerce_1696175972782prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_E_commerce_1696175972782
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
